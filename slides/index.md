@@ -1,6 +1,6 @@
 # CMPT231
 ## Data Structures and Algorithms
-## Dr. Sean Ho
+### Dr. Sean Ho
 
 >>>
 Speaker notes go here.
