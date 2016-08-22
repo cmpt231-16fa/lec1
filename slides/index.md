@@ -6,9 +6,7 @@
 Speaker notes go here.
 
 ---
-
-[cmpt231.seanho.com](http://cmpt231.seanho.com/)
-<iframe class="stretch" data-src="https://cmpt231-16fa.github.io/"/>
+<!-- .slide: data-background-iframe="https://cmpt231-16fa.github.io/" -->
 
 >>>
 + Website: static content (schedule, HW assignments, etc.)
