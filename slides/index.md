@@ -67,7 +67,7 @@ Speaker notes go here.
 + Assume each takes **constant** time
 
 ---
-## Task definition: Sorting
+## Problem definition: Sorting
 + Input: **array** of key-value pairs
   + wlog, assume **keys** are 1 ... n
   + **values** (payload): any data
@@ -124,7 +124,7 @@ insertion_sort(A, n):
   for j = 2 to n:               # c0 * n
     key = A[j]                  # c1 * (n-1)
     i = j - 1                   # c2 * (n-1)
-    while i > 0 and A[i] > key: # c3 * sum( t_j )
+    while i > 0 and A[i] > key: # c3 * sum ( t_j )
       A[i+1] = A[i]             # c4 * sum (t_j - 1)
       i = i -1                  # c5 * sum (t_j - 1)
     A[i+1] = key                # c6 * (n-1)
@@ -136,13 +136,12 @@ Summation notation: \`sum_2^n t_j = t_2 + t_3 + ... + t_n\`
 ## Worst-case complexity
 + **Best** case is if input is **pre-sorted**:
   + Still need to scan, but all \`t_j=1\`
-  + Total complexity: \`T(n)=a\*n+b\`, for some a, b
+  + Total complexity: \`T(n)=a n+b\`, for some a, b
   + **Linear** in n
 + **Worst** case: input is in **reverse** order!
   + Inner "while" loop always max iterations: \`t_j=j\`
   + Total complexity for line 5:
-    \` c_4 * sum_2^n(t_j-1) = c_4*sum_2^n(j-1)
-    = c_4*(n-1)*n/2 = (c_4/2)n^2 - n/2 \`
+    \` c_4 * sum_2^n(t_j-1) = c_4*sum_2^n(j-1) = c_4*(n-1)*n/2 = (c_4/2)n^2 - n/2 \`
   + **Quadratic** in n
 + **Average** case: input is random, \`t_j=j/2\` on average
   + Still **quadratic** in n
@@ -159,10 +158,13 @@ Summation notation: \`sum_2^n t_j = t_2 + t_3 + ... + t_n\`
   + i.e., does not depend on **size** of input
 
 ---
+## Outline
+
+---
 ## Discrete math review
-+ f(x) is **monotone increasing** iff: x &lt; y &Rarr; f(x) &le; f(y)
++ f(x) is **monotone increasing** iff: x &lt; y &rArr; f(x) &le; f(y)
   + Also called "non-decreasing"
-+ f(x) is **strictly increasing** iff: x &lt; y &Rarr; f(x) &lt; f(y)
++ f(x) is **strictly increasing** iff: x &lt; y &rArr; f(x) &lt; f(y)
 + "a mod n" is the **remainder** of a when divided by n
   + e.g., 17 mod 5 = 2 (in Python: `17 % 5`)
 + \` lim_(x->a) f(x) = b \`: "**limit** of f(x) as x goes to a is b"
@@ -200,10 +202,10 @@ Summation notation: \`sum_2^n t_j = t_2 + t_3 + ... + t_n\`
 ## Mathematical logic (notation)
 + \`not A\` (or !A): "**not** A"
   + if A = "it is Tue", then \`not A\` = "it is not Tue"
-+ A &Rarr; B: "**implies**", "if A, then B"
-  + if B = "meatloaf", then A &Rarr; B = "if Tue, then meatloaf"
-+ A &Harr; B: if and only if ("**iff**")
-  + (A &Rarr; B) and (B &Rarr; A)
++ A &rArr; B: "**implies**", "if A, then B"
+  + if B = "meatloaf", then A &rarr; B = "if Tue, then meatloaf"
++ A &hArr; B: if and only if ("**iff**")
+  + (A &rArr; B) and (B &rArr; A)
 + \`forall\`: "**for all**"
   + "\`forall text day:\` meal(day) = meatloaf"
   + "For all days, the meal on that day is meatloaf"
@@ -213,24 +215,25 @@ Summation notation: \`sum_2^n t_j = t_2 + t_3 + ... + t_n\`
 
 ---
 ## Mathematical logic
-+ **Contrapositive** of "A &Rarr; B" is \`not B => not A\`
++ **Contrapositive** of "A &rArr; B" is \`not B => not A\`
   + **Equivalent** to original statement
-  + "If Tue, then meatloaf" &Harr; "if not meatloaf, then not Tue"
-+ **Converse** of "A &Rarr; B" is "\`not A => not B\`"
+  + "If Tue, then meatloaf" &hArr; "if not meatloaf, then not Tue"
++ **Converse** of "A &rArr; B" is "\`not A => not B\`"
   + **Not** equivalent to original statement!
   + "if not Tue, then not meatloaf"
 
 ---
+## Outline
+
+---
 ## Asymptotic growth: &Theta;, O, &Omega;
 + Behaviour "in the limit" (big n)
-+ Definition of **Theta** as a class of functions:
-  + \` f(n) in Theta(g(n)) iff exists c_1, c_2, n_0 so
-    0 <= c_1 g(n) <= f(n) <= c_2 g(n), forall n > n_0 \`
++ Define **Theta** as class of functions: \` f(n) in Theta(g(n)) \`
+  + \` exists c_1, c_2, n_0: 0 <= c_1 g(n) <= f(n) <= c_2 g(n), forall n > n_0 \`
   + f(n) is "sandwiched" between two multiples of g(n),
     \`c_1 g(n)\` and \`c_2 g(n)\`
-+ "Big O": O(g(n)) specifies only the **upper** bound:
-  + \` f(n) in O(g(n)) iff exists c_2, n_0 so
-    0 <= f(n) <= c_2 g(n), forall n > n_0 \`
++ "Big O": specify only **upper** bound: \` f(n) in O(g(n)) \`
+  + \` exists c_2, n_0: 0 <= f(n) <= c_2 g(n), forall n > n_0 \`
   + e.g., \`Theta(n^2) sub O(n^2) sub O(n^3) \`
 + "Big Omega": &Omega;(g(n)) specifies only the **lower** bound
   + Think of other examples?
