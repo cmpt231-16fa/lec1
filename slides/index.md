@@ -95,7 +95,8 @@ insertion_sort(A, n):
     A[i+1] = key
 ```
 
-<!-- TODO: illustration -->
+>>>
+TODO: illustration
 
 ---
 ## Loop invariant
@@ -192,4 +193,33 @@ Summation notation: \`sum_2^n t_j = t_2 + t_3 + ... + t_n\`
   + (Lucas numbers start with \`F_0=2\`)
 + The **Golden ratio** &phi; (and its conjugate, \`bar phi\`)
   satisfy \`x^2 = x+1\`
+  + \` phi = (1 +- sqrt 5)/2 ~~ 1.61803 and -0.61803 \`
++ Can prove (#3.2-7) that \`F_n = (phi^n (bar phi)^n)/sqrt 5\`
+  + Second term is fractional: \` |(bar phi)^n|/sqrt 5 < 1/2\`
+  + So can write \` F_n = |_ phi^n/sqrt 5 + 1/2 _| = text round( phi^n / sqrt 5) \`
+  + i.e., Fibonacci grows **exponentially**!
 
+---
+## Mathematical logic (notation)
+
+---
+## Asymptotic growth
++ Behaviour "in the limit" (big n)
++ Definition of **Theta** as a class of functions:
+  + \` f(n) in Theta(g(n)) iff exists c_1, c_2, n_0 so
+    0 <= c_1 g(n) <= f(n) <= c_2 g(n), forall n > n_0 \`
+  + f(n) is "sandwiched" between two multiples of g(n),
+    \`c_1 g(n)\` and \`c_2 g(n)\`
++ "Big O": O(g(n)) specifies only the **upper** bound:
+  + \` f(n) in O(g(n)) iff exists c_2, n_0 so
+    0 <= f(n) <= c_2 g(n), forall n > n_0 \`
+  + e.g., \`Theta(n^2) sub O(n^2) sub O(n^3)
++ "Big Omega": &Omega;(g(n)) specifies only the **lower** bound
+  + Think of other examples?
+
+>>>
+TODO: graph
+
+---
+## Asymptotic proofs
++ **(p.52 #3.1-2)** Prove: \` forall a, b>0: (n+a)^b = Theta(n^b) \`
