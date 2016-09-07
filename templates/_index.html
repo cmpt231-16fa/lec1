@@ -76,8 +76,14 @@
 	      secret: Reveal.getQueryHash().s || null
 	    },
 
+        math: {
+          mathjax: 'https://cdn.mathjax.org/mathjax/latest/MathJax.js',
+          config: 'AM_CHTML',
+        },
+
             // Optional reveal.js plugins
             dependencies: [
+              { src: 'plugin/math/math.js', async: true },
 	      { src: '//cdn.socket.io/socket.io-1.4.5.js', async: true },
               Reveal.getQueryHash().s ? { src: 'bower_components/reveal.js/plugin/multiplex/master.js', async: true } : { src: 'bower_components/reveal.js/plugin/multiplex/client.js', async: true },
               { src: 'bower_components/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
