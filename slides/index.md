@@ -241,6 +241,16 @@ TODO: graph
 ---
 ## Proving asymptotic growth
 + **(p.52 #3.1-2)** Prove: \` forall a, b>0: (n+a)^b = Theta(n^b) \`
+  + From definition: we need to **find** \` n_0, c_1, c_2 \` such that
+    \` forall n > n_0, c_1 n^b <= (n+a)^b <= c_2 n^b \`
+  + i.e., find **lower** and **upper** bounds on \`(n+a)^b\`
++ Observe that n+a &ge; n/2, as long as n &gt; 2|a|
+  + Also, n+a &le; 2n, as long as n &gt; |a|
+  + Hence, n+a is **bounded** by n/2 and 2n, as long as n &gt; 2|a|
++ Raise everything to the b power: \`x^b\` is **monotone** if x &gt; 1, b &gt; 0
+  + Thus, \`(n/2)^b <= (n+a)^b <= (2n)^b\`, for n &gt; 2|a|
++ So we select \`n_0 = 2|a|, c_1 = 2^(-b), c_2 = 2^b\`
+  + This proves the Theta bound.
 
 ---
 ## Asymptotic shorthand
@@ -280,3 +290,19 @@ TODO: graph
   + **Stirling's approx**:
     \` n! = sqrt(2pi n)(n/e)^n (1+Theta(1/n)) \`
   + And hence \` lg(n!) in Theta(n lg(n)) \`
+
+---
+## Proving asymptotic behaviour
++ **(p.62 #3-3)**: Prove: \`(lg n)! in omega(n^3)\`
++ **Approach**: take lg of both sides (lg is monotone)
++ **Left side**: use Stirling:
+  \` n! = sqrt(2pi n)(n/e)^n (1+Theta(1/n)) \`
+  + So \` lg(n!) in Theta(n lg(n)) \`
+  + Now **substitute** lg(n) for n, using monotonicity of lg:
+    + So \` lg((lg n)!) in Theta( (lg n) lg(lg n) ) \`
++ **Right side**: \`lg(n^3) = 3lg n\`
+  + This is close to the left side, with 3 instead of lg(lg n)
+  + But we only need an &omega; bound, and \` lg(lg n) in omega(3) \`
++ **Combining**: \` lg((lg n)!) in Theta( (lg n) lg(lg n) ) \`
+  + \` = omega( (lg n) 3 ) = omega(lg(n^3)) \`
++ So by monotonicity, \`(lg n)! in omega(n^3)\`
