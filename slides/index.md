@@ -204,11 +204,15 @@ Summation notation: \`sum_2^n t_j = t_2 + t_3 + ... + t_n\`
   + if B = "meatloaf", then A &Rarr; B = "if Tue, then meatloaf"
 + A &Harr; B: if and only if ("**iff**")
   + (A &Rarr; B) and (B &Rarr; A)
-+ \`forall\`: "for all"
-  + ""
++ \`forall\`: "**for all**"
+  + "\`forall text day:\` meal(day) = meatloaf"
+  + "For all days, the meal on that day is meatloaf"
++ \`exists\`: "there **exists**" (not necessarily unique)
+  + "\`exists day:\` meal(day) = meatloaf"
+  + "There exists a day on which the meal is meatloaf"
 
 ---
-## Logic
+## Mathematical logic
 + **Contrapositive** of "A &Rarr; B" is \`not B => not A\`
   + **Equivalent** to original statement
   + "If Tue, then meatloaf" &Harr; "if not meatloaf, then not Tue"
@@ -216,9 +220,8 @@ Summation notation: \`sum_2^n t_j = t_2 + t_3 + ... + t_n\`
   + **Not** equivalent to original statement!
   + "if not Tue, then not meatloaf"
 
-
 ---
-## Asymptotic growth
+## Asymptotic growth: &Theta;, O, &Omega;
 + Behaviour "in the limit" (big n)
 + Definition of **Theta** as a class of functions:
   + \` f(n) in Theta(g(n)) iff exists c_1, c_2, n_0 so
@@ -236,5 +239,44 @@ Summation notation: \`sum_2^n t_j = t_2 + t_3 + ... + t_n\`
 TODO: graph
 
 ---
-## Asymptotic proofs
+## Proving asymptotic growth
 + **(p.52 #3.1-2)** Prove: \` forall a, b>0: (n+a)^b = Theta(n^b) \`
+
+---
+## Asymptotic shorthand
++ Theta(g) is a **class** of functions
+  + But for convenience, some **short-hand** notation:
++ When Theta (et al) are on the **right** side of =:
+  + It means "there **exists**" \`f in Theta(g)\`
+  + e.g., \` 2n^2 + 3n = Theta(n^2) \`
++ When Theta (et al) are on the **left** side of =:
+  + It means "**for all**" \`f in Theta(g)\`
+  + e.g., \` 4n^2 + Theta(n lg(n)) = Theta(n^2) \`
+  + True for **any** function in \`Theta(n lg(n))\`
+
+---
+## Asymptotic domination: o, &omega;
++ "**Little o**": like a strict **less than** inequality:
+  + \`f in o(g) iff forall c > 0 exists n_0: 0 <= f(n) < c g(n), forall n > n_0\`
+  + i.e., \` lim_(n->oo) f(n)/g(n) = 0\`
++ "**Little omega**": like a strict **greater than**:
+  + \`f in omega(g) iff forall c > 0 exists n_0: 0 <= c g(n) < f(n), forall n > n_0\`
+  + i.e., \` lim_(n->oo) f(n)/g(n) = oo\`
++ e.g.: \` n^1.999 in o(n^2), and n^2/lg(n) in o(n^2) \`,
+  but \` n^2/10000 notin o(n^2) \`
++ e.g.,: \` n^2.0001 in omega(n^2), and n^2 lg(n) = omega(n^2) \`
+
+---
+## Useful math identities
++ All **logs** are same up to a constant factor:
+  + \` log_a(n) = log_ b(n) / log_ b(a) \`
+  + So often use \` lg = log_2 \` for convenience
++ \` Theta(1) sub o(lg(n)) sub o(n) sub o(n^(p)) sub o(p^n) \`
+  + For any constants p &gt; 1
++ In fact, \` forall a>1, b: lim_(n->oo) n^b / a^n = 0 \`
+  + Hence, \` n^b in o(a^n) \`
+  + *"Exponentials dominate polynomials"*
++ Factorial: n! = n(n-1)(n-2)...(2)(1)
+  + **Stirling's approx**:
+    \` n! = sqrt(2pi n)(n/e)^n (1+Theta(1/n)) \`
+  + And hence \` lg(n!) in Theta(n lg(n)) \`
