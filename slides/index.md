@@ -23,7 +23,7 @@ Speaker notes go here.
   + Logic, **proofs**
 + Comfortable **coding** environment
   + Python, C++, Java, etc.
-  + not until later in semester
+  + not until **later** in semester
 
 ---
 ## Outline for today
@@ -58,7 +58,7 @@ Speaker notes go here.
 ---
 ## Basic machine model
 + Our simple CPU **instruction set**:
-  + **Arith**: +, -, \*, /, &lt;, &gt;, &neq;
+  + **Arith**: +, -, \*, /, &lt;, &gt;, &ne;
   + **Data**: `load` (read), `store` (write), copy
   + **Control**: `if`/`else`, `for`/`while`, functions
   + **Types**: char, int, float
@@ -69,7 +69,7 @@ Speaker notes go here.
 ---
 ## Task definition: Sorting
 + Input: **array** of key-value pairs
-  + wlog, assume **keys** are \`1 ... n\`
+  + wlog, assume **keys** are 1 ... n
   + **values** (payload): any data
 + Output: array **sorted** by key
   + **in-place**: modify original array
@@ -81,8 +81,6 @@ Speaker notes go here.
 
 ---
 ## One algo: insertion sort
-Like a hand of **cards**:
-
 ```
 insertion_sort(A, n):
   for j = 2 to n:
@@ -94,6 +92,7 @@ insertion_sort(A, n):
     A[i+1] = key
 ```
 
++ Like a hand of **cards**
 + Loop **invariant**:
   + `A[1 .. j-1]` are in sorted order
 + Check: **before**, **during**, and **after** loop
