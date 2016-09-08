@@ -256,9 +256,9 @@ Summation notation: \`sum_2^n t_j = t_2 + t_3 + ... + t_n\`
 
 ---
 ## Fibonacci grow exponentially
-+ Can prove **(#3.2-7)** that \`F\_n = (phi^n - (bar phi)^n)/sqrt 5\`
++ Can **prove** *(#3.2-7)* that \`F\_n = (phi^n - (bar phi)^n)/sqrt 5\`
 + Second term is **fractional**: \` |(bar phi)^n|/sqrt 5 < 1/2\`
-+ So can write \` F_n = |_ phi^n/sqrt 5 + 1/2 _| = text(round)( phi^n / sqrt 5) \`
++ So can write \`F\_n = |_ phi^n/sqrt 5 + 1/2 _| = text(round)( phi^n / sqrt 5) \`
 + i.e., Fibonacci grows **exponentially**!
 
 ---
@@ -267,13 +267,13 @@ Summation notation: \`sum_2^n t_j = t_2 + t_3 + ... + t_n\`
 ---
 ## Asymptotic growth: &Theta;, O, &Omega;
 + Behaviour "in the limit" (big n)
-+ Define **Theta** as class of functions: f(n) &isin; &Theta;(g(n)) iff
++ Define **Theta** as class of functions: f(n) &isin; *&Theta;(g(n))* iff
   + &exist; c1, c2, n0: &forall; n &gt; n0,
-  0 &le; c1 g(n) &le; f(n) &le; c2 g(n)
+  0 &le; *c1 g(n)* &le; *f(n)* &le; *c2 g(n)*
   + *f* is "**sandwiched**" between two multiples of *g*:
     c1 g(n) and c2 g(n)
-+ "Big O": specify only **upper** bound: f(n) &isin; O(g(n)) iff
-  + &exist; c2, n0: &forall; n &gt; n0, 0 &le; f(n) &le; c2 g(n)
++ "Big O": specify only **upper** bound: f(n) &isin; *O(g(n))* iff
+  + &exist; c2, n0: &forall; n &gt; n0, 0 &le; *f(n)* &le; *c2 g(n)*
   + e.g., \`Theta(n^2) sub O(n^2) sub O(n^3) \`
 + "Big Omega": &Omega;(g(n)) specifies only the **lower** bound
   + Think of other examples?
@@ -283,10 +283,10 @@ TODO: graph
 
 ---
 ## Proving asymptotic growth
-+ **(p.52 #3.1-2)** Prove: \` forall a, b>0: (n+a)^b in Theta(n^b) \`
++ **(p.52 #3.1-2)** &forall; a, b &gt; 0, prove: \`(n+a)^b in Theta(n^b) \`
 + From definition: we need to **find** \`n_0, c_1, c_2\` such that
-  \` forall n > n_0, c_1 n^b <= (n+a)^b <= c_2 n^b \`
-+ Find constants so we can **sandwich** \`(n+a)^b\` in between
+  \` forall n > n_0: c_1 n^b <= (n+a)^b <= c_2 n^b \`
++ i.e., find constants so we can **sandwich** \`(n+a)^b\` in between
   two multiples of \`n^b\`
 
 ---
@@ -297,7 +297,7 @@ TODO: graph
 + **Raise** to the *b* power (\`x^b\` is **monotone** if x &gt; 1, b &gt; 0)
   + Thus, \`(n/2)^b <= (n+a)^b <= (2n)^b\` (for n &gt; 2|a|)
 + So we select \`n_0 = 2|a|, c_1 = 2^(-b), c_2 = 2^b\`
-  + This proves the Theta bound.
+  + This **proves** the Theta bound.
 
 ---
 ## Asymptotic shorthand
@@ -313,27 +313,27 @@ TODO: graph
 
 ---
 ## Asymptotic domination: o, &omega;
-+ "**Little o**": like a strict **less than** inequality: f &isin; o(g) iff
-  + &forall; c > 0 &exist; n0: &forall; n > n0, 0 &le; f(n) < c g(n)
-  + i.e., the **limit** of f(n)/g(n) &rarr; 0 as n &rarr; &infin;
-+ "**Little omega**": like a strict **greater than**: f &isin; &omega;(g) iff
-  + &forall; c > 0 &exist; n0: &forall; n > n0, 0 &le; c g(n) < f(n)
-  + i.e., the **limit** of f(n)/g(n) &rarr; &infin; as n &rarr; &infin;
++ "**Little o**": like a strict **less than** inequality: f &isin; *o(g)* iff
+  + &forall; c > 0 &exist; n0: &forall; n > n0, 0 &le; *f(n)* < *c g(n)*
+  + i.e., the **limit** of *f(n)/g(n)* &rarr; 0 as n &rarr; &infin;
++ "**Little omega**": like a strict **greater than**: f &isin; *&omega;(g)* iff
+  + &forall; c > 0 &exist; n0: &forall; n > n0, 0 &le; *c g(n)* < *f(n)*
+  + i.e., the **limit** of *f(n)/g(n)* &rarr; &infin; as n &rarr; &infin;
 
 ---
 ## Examples of o and &omega;
-+ **Little o**: \`n^1.999 in o(n^2), and n^2/log(n) in o(n^2) \`,
++ **Little o**: \`n^1.999 in o(n^2)\`, and \`n^2/log(n) in o(n^2) \`,
   but \` n^2/10000 notin o(n^2) \`
 + **Little omega**: \` n^2.0001 in omega(n^2) and n^2 log(n) = omega(n^2) \`
 
 ---
 ## Useful math identities
-+ All **logs** are the same up to a constant factor:
-  + \` log\_a(n) = log\_b(n) / log\_b(a) \`
-  + So often use *lg* = \` log_2 \` for convenience
++ All *logs* are the **same** up to a constant factor:
+  + \` log\_a(n) = (1/log\_b(a)) log\_b(n) \`
+  + So we often use *lg* = \` log_2 \` for convenience
 + \` Theta(1) sub o(log(n)) sub o(n) sub o(n^(p)) sub o(p^n) \`
   + For any constant p &gt; 1
-+ In fact, \` forall a>1, b: lim_(n->oo) n^b / a^n = 0 \`
++ In fact, &forall; a>1, b: \`lim_(n->oo) n^b / a^n = 0 \`
   + Hence, \` n^b in o(a^n) \`
   + *"Exponentials dominate polynomials"*
 
@@ -351,18 +351,18 @@ TODO: graph
 + **Approach**: take *log* of both sides (log is monotone)
 + **Left side**: use Stirling:
   \` n! = sqrt(2pi n)(n/e)^n (1+Theta(1/n)) \`
-  + So log(n!) &isin; &Theta;(n log(n))
+  + So log(n!) &isin; &Theta;( *n log(n)* )
   + Now **substitute** log(n) for n, using monotonicity of log:
-    + So log((log n)!) &isin; &Theta;( (log n) log(log n) )
+    + So log((log n)!) &isin; &Theta;( *(log n) log(log n)* )
 
 ---
 ## Prove: (log n)! = &omega;(n^3)
-+ ... so: log((log n)!) &isin; &Theta;( (log n) log(log n) )
++ ... so: log((log n)!) &isin; &Theta;( *(log n) log(log n)* )
 + **Right side**: \`log(n^3) = 3log n\`
-  + This is close to the left side, with 3 instead of log(log n)
-  + But we only need an &omega; bound, and log(log n) &isin; &omega;(3)
-+ **Combining**: log((log n)!) &isin; &Theta;( (log n) log(log n) )
+  + This is **close** to the left side, with *3* instead of *log(log n)*
+  + But we only need an **&omega;** bound, and *log(log n)* &isin; &omega;(*3*)
++ **Combining**: \`log((log n)!) in Theta( (log n) log(log n) )\`
   + \` = omega( (log n) 3 ) = omega(log(n^3)) \`
-+ So by monotonicity, \`(log n)! in omega(n^3)\`
++ So by **monotonicity**, \`(log n)! in omega(n^3)\`
 
 
