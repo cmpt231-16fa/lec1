@@ -91,9 +91,11 @@ insertion_sort(A, n):
     i = j - 1
     while i > 0 and A[i] > key:
       A[i+1] = A[i]
-      i = i -1
+      i = i - 1
     A[i+1] = key
 ```
+
+Not the **fastest** solution, but pretty **easy** to code
 
 >>>
 TODO: illustration
@@ -111,7 +113,7 @@ insertion_sort(A, n):
     i = j - 1
     while i > 0 and A[i] > key:
       A[i+1] = A[i]
-      i = i -1
+      i = i - 1
     A[i+1] = key
 ```
 
@@ -125,9 +127,9 @@ insertion_sort(A, n):
   for j = 2 to n:               # c0 * n
     key = A[j]                  # c1 * (n-1)
     i = j - 1                   # c2 * (n-1)
-    while i > 0 and A[i] > key: # c3 * sum ( t_j )
+    while i > 0 and A[i] > key: # c3 * sum (t_j)
       A[i+1] = A[i]             # c4 * sum (t_j - 1)
-      i = i -1                  # c5 * sum (t_j - 1)
+      i = i - 1                 # c5 * sum (t_j - 1)
     A[i+1] = key                # c6 * (n-1)
 ```
 
@@ -136,27 +138,30 @@ Summation notation: \`sum_2^n t_j = t_2 + t_3 + ... + t_n\`
 ---
 ## Best vs. Worst case
 + **Best** case is if input is **pre-sorted**:
-  + Still need to scan, but all \`t_j=1\`
+  + Still need to **scan** to verify sorted,
+  + But inner **while** loop only has 1 iteration: \`t_j=1\`
   + Total complexity: T(n) = a n + b, for some a, b
   + **Linear** in n
 + **Worst** case: input is in **reverse** order!
   + Inner "while" loop always max iterations: \`t_j=j\`
   + Calculate **total** complexity T(n):
+  + Pick a line in inner loop, e.g., **line 5**: `A[i+1] = A[i]`
+  + Complexity of other lines **similar**
 
 ---
 ## Worst case complexity
 + **Total** complexity for line 5, worst-case:
-  \` c_4 sum_2^n(t_j-1) = c_4 sum_2^n(j-1) = c_4 (n-1)n/2 = (c_4/2)n^2 - n/2 \`
+  \` c_4 sum_2^n(t_j-1) = c_4 sum_2^n(j-1) \`
+  \` = c_4 (n-1)n/2 = (c_4/2)n^2 - n/2 \`
   + **Quadratic** in n
 + **Average** case: input is random, \`t_j=j/2\` on average
-  + Still quadratic (only changes **constant** factor)
-+ We say that insertion sort is **quadratic in n**: \`Theta(n^2)\`
+  + Still quadratic (only changes by a **constant** factor)
 
 ---
 ## Theta (&Theta;) notation
 + Insertion sort, line 5: \` (c_4 / 2) n^2 - n/2 \`
 + **Constants** \`c_1, c_2, ...\` may vary for different computers
-  + As n gets **big**, constants are irrelevant
+  + As n gets **big**, constants become **irrelevant**
   + Even the n term is dominated by the \`n^2\` term
 + Complexity of insertion sort is on **order** of \`n^2\`
   + Notation: \`T(n) = Theta(n^2)\` ("big theta")
@@ -167,16 +172,47 @@ Summation notation: \`sum_2^n t_j = t_2 + t_3 + ... + t_n\`
 ## Outline
 
 ---
-## Discrete math review
+## Mathematical logic (notation)
++ \`not A\` (or !A): "**not** A"
+  + if A = "*it is Tue*", then \`not A\` = "*it is not Tue*"
++ A &rArr; B: "**implies**", "if A, then B"
+  + if B = "*meatloaf*", then A &rarr; B = "*if Tue, then meatloaf*"
++ A &hArr; B: if and only if ("**iff**"): (A &rArr; B) and (B &rArr; A)
++ \`forall\`: "**for all**"
+  + "&forall; day: meal(day) = meatloaf"
+  + "*For all days, the meal on that day is meatloaf*"
++ \`exists\`: "there **exists**" (not necessarily unique)
+  + "&exist; day: meal(day) = meatloaf"
+  + "*There exists a day on which the meal is meatloaf*"
+
+---
+## Mathematical logic
++ **Contrapositive** of "A &rArr; B" is \`not B => not A\`
+  + **Equivalent** to original statement
+  + "*If Tue, then meatloaf*" &hArr; <br/> "*if not meatloaf, then not Tue*"
++ **Converse** of "A &rArr; B" is "\`not A => not B\`"
+  + **Not** equivalent to original statement!
+  + "*if not Tue, then not meatloaf*"
+
+---
+## Monotonicity
 + f(x) is **monotone increasing** iff: x &lt; y &rArr; f(x) &le; f(y)
   + Also called "non-decreasing"
+  + Can be **flat**
 + f(x) is **strictly increasing** iff: x &lt; y &rArr; f(x) &lt; f(y)
+  + note inequality is **strict**
 + "a mod n" is the **remainder** of a when divided by n
   + e.g., 17 mod 5 = 2 (in Python: `17 % 5`)
+
+---
+## Limits
++ Formal definitions involve &forall; and &exist;
 + \` lim_(x->a) f(x) = b \`: "**limit** of f(x) as x goes to a is b"
-  + \` forall epsi > 0, exists delta > 0: |x-a| < delta => |f(x)-b| < epsi \`
+  + &forall; &epsilon; &gt; 0, &exist; &delta; &gt; 0:
+    |x-a| &lt; &delta; &rArr; |f(x)-b| &lt; &epsilon;
 + \` lim_(n->oo) f(n) = b \`: "**limit** of f(n) as n goes to infinity is b":
-  + \` forall epsi > 0, exists n_0: n > n_0 => |f(n)-b| < epsi \`
+  + &forall; &epsilon &gt; 0, &exist; n0:
+    n &gt; n0 &rArr; |f(n)-b| &lt; &epsilon;
 
 ---
 ## Iterated functions (recursion)
@@ -186,10 +222,14 @@ Summation notation: \`sum_2^n t_j = t_2 + t_3 + ... + t_n\`
 + e.g., \` log^((2))(1000) \` = log(log(1000)) = log(3) &asymp; 0.477
   + But \` log^2(1000) = (log(1000))^2 = 3^2 \` = 9
 + By convention, \` f^((0))(x) = x \` (apply f zero times)
-+ **Iterated log**: \` log^**(n) = min(i>=0: log^((i))(n)<=1) \`
-  + \# times log needs to be applied to n until the result is &le;1
-  + e.g., let \` lg = log_2 \`: then \` lg^**(16) = 3 \` because
-    lg(lg(lg(16))) = lg(lg(4)) = lg(2) = 1
+
+---
+## Iterated log: log\*(n)
++ \` log^**(n) = min(i>=0: log^((i))(n)<=1) \`
++ \# times log needs to be applied to n until the result is &le;1
++ e.g., let \` lg = log_2 \`:
+  + then \` lg^**(16) = 3 \`, because
+  lg(lg(lg(16))) = lg(lg(4)) = lg(2) = 1
 
 ---
 ## Fibonacci and golden ratio
@@ -197,39 +237,17 @@ Summation notation: \`sum_2^n t_j = t_2 + t_3 + ... + t_n\`
   + Start with \`F_0=0, F_1=1:\`
   + \`F_n=0, 1, 1, 2, 3, 5, 8, 13, 21, ...\`
   + (Lucas numbers start with \`F_0=2\`)
-+ The **Golden ratio** &phi; (and conjugate, \`bar phi\`)
-  satisfy \`phi^2 = phi+1\`
-  + \` phi = (1 +- sqrt 5)/2 \` &asymp; 1.61803 and -0.61803
++ The **Golden ratio** &phi; satisfies \`phi^2 = phi+1\`
+  + Also its **conjugate**, \`bar phi\`
+  + \` phi = (1 +- sqrt 5)/2 \`
+  + &phi; &asymp; 1.61803, and \`bar phi\` &asymp; -0.61803
 
 ---
 ## Fibonacci grow exponentially
-+ Can prove (#3.2-7) that \`F\_n = (phi^n (bar phi)^n)/sqrt 5\`
++ Can prove **(#3.2-7)** that \`F\_n = (phi^n - (bar phi)^n)/sqrt 5\`
 + Second term is **fractional**: \` |(bar phi)^n|/sqrt 5 < 1/2\`
-+ So can write \` F\_n = |\_ phi^n/sqrt 5 + 1/2 \_| = text round( phi^n / sqrt 5) \`
++ So can write \` F\_n = |_ phi^n/sqrt 5 + 1/2 _| = text(round)( phi^n / sqrt 5) \`
 + i.e., Fibonacci grows **exponentially**!
-
----
-## Mathematical logic (notation)
-+ \`not A\` (or !A): "**not** A"
-  + if A = "it is Tue", then \`not A\` = "it is not Tue"
-+ A &rArr; B: "**implies**", "if A, then B"
-  + if B = "meatloaf", then A &rarr; B = "if Tue, then meatloaf"
-+ A &hArr; B: if and only if ("**iff**"): (A &rArr; B) and (B &rArr; A)
-+ \`forall\`: "**for all**"
-  + "&forall; day: meal(day) = meatloaf"
-  + "For all days, the meal on that day is meatloaf"
-+ \`exists\`: "there **exists**" (not necessarily unique)
-  + "&exist; day: meal(day) = meatloaf"
-  + "There exists a day on which the meal is meatloaf"
-
----
-## Mathematical logic
-+ **Contrapositive** of "A &rArr; B" is \`not B => not A\`
-  + **Equivalent** to original statement
-  + "If Tue, then meatloaf" &hArr; <br/> "if not meatloaf, then not Tue"
-+ **Converse** of "A &rArr; B" is "\`not A => not B\`"
-  + **Not** equivalent to original statement!
-  + "if not Tue, then not meatloaf"
 
 ---
 ## Outline
@@ -237,12 +255,13 @@ Summation notation: \`sum_2^n t_j = t_2 + t_3 + ... + t_n\`
 ---
 ## Asymptotic growth: &Theta;, O, &Omega;
 + Behaviour "in the limit" (big n)
-+ Define **Theta** as class of functions: \` f(n) in Theta(g(n)) \`
-  + \` exists c_1, c_2, n_0: 0 <= c_1 g(n) <= f(n) <= c_2 g(n), forall n > n_0 \`
-  + f(n) is "sandwiched" between two multiples of g(n),
-    \`c_1 g(n)\` and \`c_2 g(n)\`
-+ "Big O": specify only **upper** bound: \` f(n) in O(g(n)) \`
-  + \` exists c_2, n_0: 0 <= f(n) <= c_2 g(n), forall n > n_0 \`
++ Define **Theta** as class of functions: f(n) &isin; &Theta;(g(n)) iff
+  + &exist; c1, c2, n0: &forall; n &gt; n0,
+  0 &le; c1 g(n) &le; f(n) &le; c2 g(n)
+  + *f* is "**sandwiched**" between two multiples of *g*:
+    c1 g(n) and c2 g(n)
++ "Big O": specify only **upper** bound: f(n) &isin; O(g(n)) iff
+  + &exist; c2, n0: &forall; n &gt; n0, 0 &le; f(n) &le; c2 g(n)
   + e.g., \`Theta(n^2) sub O(n^2) sub O(n^3) \`
 + "Big Omega": &Omega;(g(n)) specifies only the **lower** bound
   + Think of other examples?
@@ -252,15 +271,19 @@ TODO: graph
 
 ---
 ## Proving asymptotic growth
-+ **(p.52 #3.1-2)** Prove: \` forall a, b>0: (n+a)^b = Theta(n^b) \`
-  + From definition: we need to **find** \` n_0, c_1, c_2 \` such that
-    \` forall n > n_0, c_1 n^b <= (n+a)^b <= c_2 n^b \`
-  + i.e., find **lower** and **upper** bounds on \`(n+a)^b\`
-+ Observe that n+a &ge; n/2, as long as n &gt; 2|a|
-  + Also, n+a &le; 2n, as long as n &gt; |a|
-  + Hence, n+a is **bounded** by n/2 and 2n, as long as n &gt; 2|a|
-+ Raise to the b power (\`x^b\` is **monotone** if x &gt; 1, b &gt; 0)
-  + Thus, \`(n/2)^b <= (n+a)^b <= (2n)^b\`, for n &gt; 2|a|
++ **(p.52 #3.1-2)** Prove: \` forall a, b>0: (n+a)^b in Theta(n^b) \`
++ From definition: we need to **find** \`n_0, c_1, c_2\` such that
+  \` forall n > n_0, c_1 n^b <= (n+a)^b <= c_2 n^b \`
++ Find constants so we can **sandwich** \`(n+a)^b\` in between
+  two multiples of \`n^b\`
+
+---
+## Prove: (n+a)^b &isin; &Theta;(n^b)
++ **Observe** that *n+a &ge; n/2*, as long as n &gt; 2|a|
+  + Also, *n+a &le; 2n*, as long as n &gt; |a|
+  + Hence, *n+a* is **sandwiched** by *n/2* and *2n* (if n &gt; 2|a|)
++ **Raise** to the *b* power (\`x^b\` is **monotone** if x &gt; 1, b &gt; 0)
+  + Thus, \`(n/2)^b <= (n+a)^b <= (2n)^b\` (for n &gt; 2|a|)
 + So we select \`n_0 = 2|a|, c_1 = 2^(-b), c_2 = 2^b\`
   + This proves the Theta bound.
 
@@ -278,21 +301,24 @@ TODO: graph
 
 ---
 ## Asymptotic domination: o, &omega;
-+ "**Little o**": like a strict **less than** inequality: f &isin; o(g) &hArr;
-  + &forall; c > 0 &exist; n0: 0 &le; f(n) < c g(n), &forall; n > n0
-  + i.e., **limit** f(n)/g(n) &rarr; 0 as n &rarr; &infin;
-+ "**Little omega**": like a strict **greater than**: f &isin; &omega;(g) &hArr;
-  + &forall; c > 0 &exist; n0: 0 &le; c g(n) < f(n), &forall; n > n0
-  + i.e., **limit** f(n)/g(n) &rarr; &infin; as n &rarr; &infin;
-+ **e.g.**: \` n^1.999 in o(n^2), and n^2/log(n) in o(n^2) \`,
++ "**Little o**": like a strict **less than** inequality: f &isin; o(g) iff
+  + &forall; c > 0 &exist; n0: &forall; n > n0, 0 &le; f(n) < c g(n)
+  + i.e., the **limit** of f(n)/g(n) &rarr; 0 as n &rarr; &infin;
++ "**Little omega**": like a strict **greater than**: f &isin; &omega;(g) iff
+  + &forall; c > 0 &exist; n0: &forall; n > n0, 0 &le; c g(n) < f(n)
+  + i.e., the **limit** of f(n)/g(n) &rarr; &infin; as n &rarr; &infin;
+
+---
+## Examples of o and &omega;
++ **Little o**: \`n^1.999 in o(n^2), and n^2/log(n) in o(n^2) \`,
   but \` n^2/10000 notin o(n^2) \`
-+ **e.g.**: \` n^2.0001 in omega(n^2), and n^2 log(n) = omega(n^2) \`
++ **Little omega**: \` n^2.0001 in omega(n^2) and n^2 log(n) = omega(n^2) \`
 
 ---
 ## Useful math identities
-+ All **logs** are same up to a constant factor:
++ All **logs** are the same up to a constant factor:
   + \` log\_a(n) = log\_b(n) / log\_b(a) \`
-  + So often use \` lg = log_2 \` for convenience
+  + So often use *lg* = \` log_2 \` for convenience
 + \` Theta(1) sub o(log(n)) sub o(n) sub o(n^(p)) sub o(p^n) \`
   + For any constant p &gt; 1
 + In fact, \` forall a>1, b: lim_(n->oo) n^b / a^n = 0 \`
@@ -318,13 +344,13 @@ TODO: graph
     + So log((log n)!) &isin; &Theta;( (log n) log(log n) )
 
 ---
-## Example proof, cont.
-+ **(p.62 #3-3)**: Prove: \`(log n)! in omega(n^3)\`
+## Prove: (log n)! = &omega;(n^3)
++ ... so: log((log n)!) &isin; &Theta;( (log n) log(log n) )
 + **Right side**: \`log(n^3) = 3log n\`
   + This is close to the left side, with 3 instead of log(log n)
   + But we only need an &omega; bound, and log(log n) &isin; &omega;(3)
 + **Combining**: log((log n)!) &isin; &Theta;( (log n) log(log n) )
-  + = &omega;( (log n) 3 ) = \` omega(log(n^3)) \`
+  + \` = omega( (log n) 3 ) = omega(log(n^3)) \`
 + So by monotonicity, \`(log n)! in omega(n^3)\`
 
 
