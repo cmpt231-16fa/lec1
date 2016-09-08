@@ -86,6 +86,7 @@ Speaker notes go here.
 <!-- .slide: data-background-image="http://sermons.seanho.com/img/bg/pixabay-726797-cards_monalisa.jpg" -->
 ## Insertion sort: hand of cards
 
+<div class="imgbox"><div data-markdown>
 ```
 insertion_sort(A, n):
   for j = 2 to n:
@@ -96,15 +97,15 @@ insertion_sort(A, n):
       i = i - 1
     A[i+1] = key
 ```
-
+</div><div data-markdown>
 | In: |  *E*&rarr; | **B**      |   D        |   F        |   A        |   C        |
 |-----|------------|------------|------------|------------|------------|------------|
 | j=3 |   B        |  *E*&rarr; | **D**      |   F        |   A        |   C        |
 | j=4 |   B        |   D        |  *E*&rarr; | **F**      |   A        |   C        |
 | j=5 |  *B*&rarr; |  *D*&rarr; |  *E*&rarr; |  *F*&rarr; | **A**      |   C        |
 | j=6 |   A        |   B        |  *D*&rarr; |  *E*&rarr; |  *F*&rarr; | **C**      |
-|-----|------------|------------|------------|------------|------------|------------|
 | Out:|   A        |   B        |   C        |   D        |   E        |   F        |
+</div></div>
 
 >>>
 Not the **fastest** solution, but pretty **easy** to code
