@@ -298,7 +298,7 @@ TODO: graph
 + Hence, \` log(n!) in Theta(n log(n)) \`
 
 ---
-## Proving asymptotic behaviour
+## Example asymptotic proof
 + **(p.62 #3-3)**: Prove: \`(log n)! in omega(n^3)\`
 + **Approach**: take log of both sides (log is monotone)
 + **Left side**: use Stirling:
@@ -306,9 +306,15 @@ TODO: graph
   + So log(n!) &isin; &Theta;(n log(n))
   + Now **substitute** log(n) for n, using monotonicity of log:
     + So log((log n)!) &isin; &Theta;( (log n) log(log n) )
-+ **Right side**: \`log(n^3) = 3lg n\`
+
+---
+## Example proof, cont.
++ **(p.62 #3-3)**: Prove: \`(log n)! in omega(n^3)\`
++ **Right side**: \`log(n^3) = 3log n\`
   + This is close to the left side, with 3 instead of log(log n)
   + But we only need an &omega; bound, and log(log n) &isin; &omega;(3)
 + **Combining**: log((log n)!) &isin; &Theta;( (log n) log(log n) )
   + = &omega;( (log n) 3 ) = \` omega(log(n^3)) \`
 + So by monotonicity, \`(log n)! in omega(n^3)\`
+
+
