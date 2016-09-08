@@ -34,7 +34,7 @@ Speaker notes go here.
 + Discrete **math** review
   + **Logic** and proofs
   + Monotonicity, limits, iterated functions
-+ **Asymptotic** notation: &Theta, O, &Omega;, o, &omega;
++ **Asymptotic** notation: &Theta;, O, &Omega;, o, &omega;
   + **Proving** asymptotic bounds
 
 ---
@@ -83,6 +83,7 @@ Speaker notes go here.
   + **How** do they do it?
 
 ---
+<!-- .slide: data-background-image="http://sermons.seanho.com/img/bg/pixabay-726797-cards_monalisa.jpg" -->
 ## One algo: insertion sort
 
 Analogy: sorting a hand of **cards** one by one
@@ -181,7 +182,7 @@ Summation notation: \`sum_2^n t_j = t_2 + t_3 + ... + t_n\`
 + Discrete **math** review
   + **Logic** and proofs
   + Monotonicity, limits, iterated functions
-+ **Asymptotic** notation: &Theta, O, &Omega;, o, &omega;
++ **Asymptotic** notation: &Theta;, O, &Omega;, o, &omega;
   + **Proving** asymptotic bounds
 
 ---
@@ -222,17 +223,17 @@ Summation notation: \`sum_2^n t_j = t_2 + t_3 + ... + t_n\`
   + Can be **flat**
 + f(x) is **strictly increasing** iff: *x &lt; y &rArr; f(x) &lt; f(y)*
   + note inequality is **strict**
-+ "a mod n" is the **remainder** of a when divided by n
++ "*a mod n*" is the **remainder** of a when divided by n
   + e.g., 17 mod 5 = 2 (in Python: `17 % 5`)
 
 ---
 ## Limits
 + Formal definitions involve &forall; and &exist;
-+ \` lim_(x->a) f(x) = b \`: "**limit** of f(x) as x goes to a is b"
++ \` lim_(x->a) f(x) = b \`: "**limit** of f(x) as x goes to a"
   + &forall; &epsilon; &gt; 0, &exist; &delta; &gt; 0:
     *|x-a| &lt; &delta;* &rArr; *|f(x)-b| &lt; &epsilon;*
   + When *x* is "close" to *a*, then *f(x)* is "close" to *b*
-+ \` lim_(n->oo) f(n) = b \`: "**limit** of f(n) as n goes to infinity is b":
++ \` lim_(n->oo) f(n) = b \`: "**limit** of f(n) as n goes to infinity":
   + &forall; &epsilon; &gt; 0, &exist; n0:
     *n &gt; n0* &rArr; *|f(n)-b| &lt; &epsilon;*
   + When *n* is "big", *f(n)* is "close" to *b*
@@ -255,6 +256,7 @@ Summation notation: \`sum_2^n t_j = t_2 + t_3 + ... + t_n\`
   + lg(lg(lg(16))) = lg(lg(4)) = lg(2) = 1
 
 ---
+<!-- .slide: data-background-image="http://sermons.seanho.com/img/bg/unsplash-_jN5_9zu8DM-sunflower.jpg" -->
 ## Fibonacci and golden ratio
 + The n-th **Fibonacci number** is \`F\_n=F\_(n-1) + F\_(n-2)\`
   + Start with \`F_0=0, F_1=1:\`
@@ -266,6 +268,7 @@ Summation notation: \`sum_2^n t_j = t_2 + t_3 + ... + t_n\`
   + &phi; &asymp; 1.61803, and \`bar phi\` &asymp; -0.61803
 
 ---
+<!-- .slide: data-background-image="http://sermons.seanho.com/img/bg/unsplash-_jN5_9zu8DM-sunflower.jpg" -->
 ## Fibonacci grows exponentially
 + Can **prove** *(#3.2-7)* that \`F\_n = (phi^n - (bar phi)^n)/sqrt 5\`
 + Second term is **fractional**: \` |(bar phi)^n|/sqrt 5 < 1/2\`
@@ -280,7 +283,7 @@ Summation notation: \`sum_2^n t_j = t_2 + t_3 + ... + t_n\`
 + Discrete **math** review
   + **Logic** and proofs
   + Monotonicity, limits, iterated functions
-+ **Asymptotic** notation: &Theta, O, &Omega;, o, &omega;
++ **Asymptotic** notation: &Theta;, O, &Omega;, o, &omega;
   + **Proving** asymptotic bounds
 
 ---
@@ -296,9 +299,6 @@ Summation notation: \`sum_2^n t_j = t_2 + t_3 + ... + t_n\`
   + e.g., \`Theta(n^2) sub O(n^2) sub O(n^3) \`
 + "Big Omega": &Omega;(g(n)) specifies only the **lower** bound
   + Think of other examples?
-
->>>
-TODO: graph
 
 ---
 ## Proving asymptotic growth
@@ -392,7 +392,7 @@ TODO: graph
 + Discrete **math** review
   + **Logic** and proofs
   + Monotonicity, limits, iterated functions
-+ **Asymptotic** notation: &Theta, O, &Omega;, o, &omega;
++ **Asymptotic** notation: &Theta;, O, &Omega;, o, &omega;
   + **Proving** asymptotic bounds
 
 ---
