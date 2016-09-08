@@ -183,8 +183,8 @@ Summation notation: \`sum_2^n t_j = t_2 + t_3 + ... + t_n\`
 + A &hArr; B: if and only if ("**iff**"):
   + **equivalence**: (A &rArr; B) and (B &rArr; A)
 + **John 14:15**: "*If you love me, keep my commands*"
-  + **v21**: "*Whoever keeps my commands is the one who loves me*"
-  + **v24**: "*Anyone who does not love me will not obey my teaching*"
++ **v21**: "*Whoever keeps my commands loves me*"
++ **v24**: "*He who does not love me will not obey my teaching*"
 
 ---
 ## Logic notation: &forall; and &exist;
