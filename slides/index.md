@@ -98,6 +98,7 @@ insertion_sort(A, n):
     A[i+1] = key
 ```
 </div><div data-markdown>
+
 | In: |  *E*&rarr; | **B**      |   D        |   F        |   A        |   C        |
 |-----|------------|------------|------------|------------|------------|------------|
 | j=3 |   B        |  *E*&rarr; | **D**      |   F        |   A        |   C        |
@@ -105,6 +106,7 @@ insertion_sort(A, n):
 | j=5 |  *B*&rarr; |  *D*&rarr; |  *E*&rarr; |  *F*&rarr; | **A**      |   C        |
 | j=6 |   A        |   B        |  *D*&rarr; |  *E*&rarr; |  *F*&rarr; | **C**      |
 | Out:|   A        |   B        |   C        |   D        |   E        |   F        |
+
 </div></div>
 
 >>>
