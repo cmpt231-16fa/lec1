@@ -258,7 +258,7 @@ Summation notation: \`sum_2^n t_j = t_2 + t_3 + ... + t_n\`
 ## Fibonacci grow exponentially
 + Can **prove** *(#3.2-7)* that \`F\_n = (phi^n - (bar phi)^n)/sqrt 5\`
 + Second term is **fractional**: \` |(bar phi)^n|/sqrt 5 < 1/2\`
-+ So can write \`F\_n = |_ phi^n/sqrt 5 + 1/2 _| = text(round)( phi^n / sqrt 5) \`
++ So can write ``F_n = |_ phi^n/sqrt 5 + 1/2 _| = text(round)( phi^n / sqrt 5) ``
 + i.e., Fibonacci grows **exponentially**!
 
 ---
@@ -322,8 +322,8 @@ TODO: graph
 
 ---
 ## Examples of o and &omega;
-+ **Little o**: \`n^1.999 in o(n^2)\`, and \`n^2/log(n) in o(n^2) \`,
-  but \` n^2/10000 notin o(n^2) \`
++ **Little o**: \`n^1.999 in o(n^2)\`, and \`n^2/log(n) in o(n^2) \`
+  + but \` n^2/10000 notin o(n^2) \`
 + **Little omega**: \` n^2.0001 in omega(n^2) and n^2 log(n) = omega(n^2) \`
 
 ---
