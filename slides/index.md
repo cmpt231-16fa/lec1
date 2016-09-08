@@ -117,7 +117,8 @@ insertion_sort(A, n):
 
 ---
 ## Complexity of insertion sort
-Let \`t_j\` be num times `while` cond is checked
+Let \`t_j\` be num times the loop condition is checked
+in the inner "while" loop:
 
 ```
 insertion_sort(A, n):
@@ -133,22 +134,27 @@ insertion_sort(A, n):
 Summation notation: \`sum_2^n t_j = t_2 + t_3 + ... + t_n\`
 
 ---
-## Worst-case complexity
+## Best vs. Worst case
 + **Best** case is if input is **pre-sorted**:
   + Still need to scan, but all \`t_j=1\`
-  + Total complexity: \`T(n)=a n+b\`, for some a, b
+  + Total complexity: T(n) = a n + b, for some a, b
   + **Linear** in n
 + **Worst** case: input is in **reverse** order!
   + Inner "while" loop always max iterations: \`t_j=j\`
-  + Total complexity for line 5:
-    \` c_4 sum_2^n(t_j-1) = c_4 sum_2^n(j-1) = c_4 (n-1)*n/2 = (c_4/2)n^2 - n/2 \`
+  + Calculate **total** complexity T(n):
+
+---
+## Worst case complexity
++ **Total** complexity for line 5, worst-case:
+  \` c_4 sum_2^n(t_j-1) = c_4 sum_2^n(j-1) = c_4 (n-1)n/2 = (c_4/2)n^2 - n/2 \`
   + **Quadratic** in n
 + **Average** case: input is random, \`t_j=j/2\` on average
-  + Still **quadratic** in n
+  + Still quadratic (only changes **constant** factor)
++ We say that insertion sort is **quadratic in n**: \`Theta(n^2)\`
 
 ---
 ## Theta (&Theta;) notation
-+ e.g., line5: \` (c_4 / 2) n^2 - n/2 \`
++ Insertion sort, line 5: \` (c_4 / 2) n^2 - n/2 \`
 + **Constants** \`c_1, c_2, ...\` may vary for different computers
   + As n gets **big**, constants are irrelevant
   + Even the n term is dominated by the \`n^2\` term
@@ -188,15 +194,19 @@ Summation notation: \`sum_2^n t_j = t_2 + t_3 + ... + t_n\`
 ---
 ## Fibonacci and golden ratio
 + The n-th **Fibonacci number** is \`F\_n=F\_(n-1) + F\_(n-2)\`
-  + Start with \`F_0=0, F_1=1\`: 0, 1, 1, 2, 3, 5, 8, 13, 21, ...
+  + Start with \`F_0=0, F_1=1:\`
+  + \`F_n=0, 1, 1, 2, 3, 5, 8, 13, 21, ...\`
   + (Lucas numbers start with \`F_0=2\`)
 + The **Golden ratio** &phi; (and conjugate, \`bar phi\`)
   satisfy \`phi^2 = phi+1\`
   + \` phi = (1 +- sqrt 5)/2 \` &asymp; 1.61803 and -0.61803
+
+---
+## Fibonacci grow exponentially
 + Can prove (#3.2-7) that \`F\_n = (phi^n (bar phi)^n)/sqrt 5\`
-  + Second term is fractional: \` |(bar phi)^n|/sqrt 5 < 1/2\`
-  + So can write \` F\_n = |\_ phi^n/sqrt 5 + 1/2 \_| = text round( phi^n / sqrt 5) \`
-  + i.e., Fibonacci grows **exponentially**!
++ Second term is **fractional**: \` |(bar phi)^n|/sqrt 5 < 1/2\`
++ So can write \` F\_n = |\_ phi^n/sqrt 5 + 1/2 \_| = text round( phi^n / sqrt 5) \`
++ i.e., Fibonacci grows **exponentially**!
 
 ---
 ## Mathematical logic (notation)
@@ -249,19 +259,19 @@ TODO: graph
 + Observe that n+a &ge; n/2, as long as n &gt; 2|a|
   + Also, n+a &le; 2n, as long as n &gt; |a|
   + Hence, n+a is **bounded** by n/2 and 2n, as long as n &gt; 2|a|
-+ Raise everything to the b power: \`x^b\` is **monotone** if x &gt; 1, b &gt; 0
++ Raise to the b power (\`x^b\` is **monotone** if x &gt; 1, b &gt; 0)
   + Thus, \`(n/2)^b <= (n+a)^b <= (2n)^b\`, for n &gt; 2|a|
 + So we select \`n_0 = 2|a|, c_1 = 2^(-b), c_2 = 2^b\`
   + This proves the Theta bound.
 
 ---
 ## Asymptotic shorthand
-+ Theta(g) is a **class** of functions
++ &Theta;(g) is a **class** of functions
   + But for convenience, some **short-hand** notation:
-+ When Theta (et al) are on the **right** side of =:
++ When &Theta; (et al) are on the **right** side of =:
   + It means "there **exists**" \`f in Theta(g)\`
   + e.g., \` 2n^2 + 3n = Theta(n^2) \`
-+ When Theta (et al) are on the **left** side of =:
++ When &Theta; (et al) are on the **left** side of =:
   + It means "**for all**" \`f in Theta(g)\`
   + e.g., \` 4n^2 + Theta(n log(n)) = Theta(n^2) \`
   + True for **any** function in \`Theta(n log(n))\`
@@ -269,14 +279,14 @@ TODO: graph
 ---
 ## Asymptotic domination: o, &omega;
 + "**Little o**": like a strict **less than** inequality: f &isin; o(g) &hArr;
-  + \`forall c > 0 exists n_0: 0 <= f(n) < c g(n), forall n > n_0\`
-  + i.e., \` lim_(n->oo) f(n)/g(n) = 0\`
+  + &forall; c > 0 &exist; n0: 0 &le; f(n) < c g(n), &forall; n > n0
+  + i.e., **limit** f(n)/g(n) &rarr; 0 as n &rarr; &infin;
 + "**Little omega**": like a strict **greater than**: f &isin; &omega;(g) &hArr;
-  + \`forall c > 0 exists n_0: 0 <= c g(n) < f(n), forall n > n_0\`
-  + i.e., \` lim_(n->oo) f(n)/g(n) = oo\`
-+ e.g.: \` n^1.999 in o(n^2), and n^2/log(n) in o(n^2) \`,
+  + &forall; c > 0 &exist; n0: 0 &le; c g(n) < f(n), &forall; n > n0
+  + i.e., **limit** f(n)/g(n) &rarr; &infin; as n &rarr; &infin;
++ **e.g.**: \` n^1.999 in o(n^2), and n^2/log(n) in o(n^2) \`,
   but \` n^2/10000 notin o(n^2) \`
-+ e.g.,: \` n^2.0001 in omega(n^2), and n^2 log(n) = omega(n^2) \`
++ **e.g.**: \` n^2.0001 in omega(n^2), and n^2 log(n) = omega(n^2) \`
 
 ---
 ## Useful math identities
@@ -300,7 +310,7 @@ TODO: graph
 ---
 ## Example asymptotic proof
 + **(p.62 #3-3)**: Prove: \`(log n)! in omega(n^3)\`
-+ **Approach**: take log of both sides (log is monotone)
++ **Approach**: take *log* of both sides (log is monotone)
 + **Left side**: use Stirling:
   \` n! = sqrt(2pi n)(n/e)^n (1+Theta(1/n)) \`
   + So log(n!) &isin; &Theta;(n log(n))
