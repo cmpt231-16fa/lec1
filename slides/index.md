@@ -120,7 +120,7 @@ insertion_sort(A, n):
 
 ---
 ## Complexity analysis
-Let \`t_j\` be num times the loop condition is checked
+Let \`t_j\` be the number of times the loop condition is checked
 in the inner "while" loop:
 
 ```
@@ -153,41 +153,50 @@ Summation notation: \`sum_2^n t_j = t_2 + t_3 + ... + t_n\`
 ## Worst case complexity
 + **Total** complexity for line 5, worst-case:
   \` c_4 sum_2^n(t_j-1) = c_4 sum_2^n(j-1) \`
-  \` = c_4 (n-1)n/2 = (c_4/2)n^2 - n/2 \`
+  \` = c_4 (n-1)n/2 = (c_4/2)n^2 - (1/2)n \`
   + **Quadratic** in n
 + **Average** case: input is random, \`t_j=j/2\` on average
   + Still quadratic (only changes by a **constant** factor)
 
 ---
 ## Theta (&Theta;) notation
-+ Insertion sort, line 5: \` (c_4 / 2) n^2 - n/2 \`
++ Insertion sort, line 5: \` (c_4 / 2) n^2 - (1/2)n \`
 + **Constants** \`c_1, c_2, ...\` may vary for different computers
   + As n gets **big**, constants become **irrelevant**
   + Even the n term is dominated by the \`n^2\` term
 + Complexity of insertion sort is on **order** of \`n^2\`
-  + Notation: \`T(n) = Theta(n^2)\` ("big theta")
+  + Notation: \`T(n) = Theta(n^2)\` ("theta")
 + \`Theta(1)\` means an algorithm runs in **constant time**
   + i.e., does not depend on **size** of input
++ We'll define &Theta; more **precisely** later today
 
 ---
 ## Outline
 
 ---
-## Mathematical logic (notation)
+## Logic notation
 + \`not A\` (or !A): "**not** A"
-  + if A = "*it is Tue*", then \`not A\` = "*it is not Tue*"
+  + e.g., let A = "*it is Tue*": then \`not A\` = "*it is not Tue*"
 + A &rArr; B: "**implies**", "if A, then B"
-  + if B = "*meatloaf*", then A &rarr; B = "*if Tue, then meatloaf*"
-+ A &hArr; B: if and only if ("**iff**"): (A &rArr; B) and (B &rArr; A)
-+ \`forall\`: "**for all**"
-  + "&forall; day: meal(day) = meatloaf"
+  + e.g., let B = "*meatloaf*":
+  + then A &rArr; B = "*if Tue, then meatloaf*"
++ A &hArr; B: if and only if ("**iff**"):
+  + **equivalence**: (A &rArr; B) and (B &rArr; A)
++ **John 14:15**: "*If you love me, keep my commands*"
+  + **v21**: "*Whoever keeps my commands is the one who loves me*"
+  + **v24**: "*Anyone who does not love me will not obey my teaching*"
+
+---
+## Logic notation: &forall; and &exist;
++ &forall;: "**for all**",
+  + e.g., "&forall; day: meal(day) = meatloaf"
   + "*For all days, the meal on that day is meatloaf*"
-+ \`exists\`: "there **exists**" (not necessarily unique)
-  + "&exist; day: meal(day) = meatloaf"
++ &exist;: "there **exists**" (not necessarily unique)
+  + e.g., "&exist; day: meal(day) = meatloaf"
   + "*There exists a day on which the meal is meatloaf*"
 
 ---
-## Mathematical logic
+## Logic: contrapos and converse
 + **Contrapositive** of "A &rArr; B" is \`not B => not A\`
   + **Equivalent** to original statement
   + "*If Tue, then meatloaf*" &hArr; <br/> "*if not meatloaf, then not Tue*"
@@ -197,10 +206,10 @@ Summation notation: \`sum_2^n t_j = t_2 + t_3 + ... + t_n\`
 
 ---
 ## Monotonicity
-+ f(x) is **monotone increasing** iff: x &lt; y &rArr; f(x) &le; f(y)
++ f(x) is **monotone increasing** iff: *x &lt; y &rArr; f(x) &le; f(y)*
   + Also called "non-decreasing"
   + Can be **flat**
-+ f(x) is **strictly increasing** iff: x &lt; y &rArr; f(x) &lt; f(y)
++ f(x) is **strictly increasing** iff: *x &lt; y &rArr; f(x) &lt; f(y)*
   + note inequality is **strict**
 + "a mod n" is the **remainder** of a when divided by n
   + e.g., 17 mod 5 = 2 (in Python: `17 % 5`)
@@ -210,27 +219,29 @@ Summation notation: \`sum_2^n t_j = t_2 + t_3 + ... + t_n\`
 + Formal definitions involve &forall; and &exist;
 + \` lim_(x->a) f(x) = b \`: "**limit** of f(x) as x goes to a is b"
   + &forall; &epsilon; &gt; 0, &exist; &delta; &gt; 0:
-    |x-a| &lt; &delta; &rArr; |f(x)-b| &lt; &epsilon;
+    *|x-a| &lt; &delta;* &rArr; *|f(x)-b| &lt; &epsilon;*
+  + When *x* is "close" to *a*, then *f(x)* is "close" to *b*
 + \` lim_(n->oo) f(n) = b \`: "**limit** of f(n) as n goes to infinity is b":
-  + &forall; &epsilon &gt; 0, &exist; n0:
-    n &gt; n0 &rArr; |f(n)-b| &lt; &epsilon;
+  + &forall; &epsilon; &gt; 0, &exist; n0:
+    *n &gt; n0* &rArr; *|f(n)-b| &lt; &epsilon;*
+  + When *n* is "big", *f(n)* is "close" to *b*
 
 ---
 ## Iterated functions (recursion)
-+ \` f^((i))(x) \`: function f, applied i times to x:
++ \` f^((i))(x) \`: function *f*, **applied** *i* times to *x*:
   f(f(f(... f(x) ...)))
   + **Not** the same as \` f^i(x) = (f(x))^i \`
 + e.g., \` log^((2))(1000) \` = log(log(1000)) = log(3) &asymp; 0.477
   + But \` log^2(1000) = (log(1000))^2 = 3^2 \` = 9
-+ By convention, \` f^((0))(x) = x \` (apply f zero times)
++ By convention, \` f^((0))(x) = x \` (apply *f* **zero** times)
 
 ---
 ## Iterated log: log\*(n)
 + \` log^**(n) = min(i>=0: log^((i))(n)<=1) \`
-+ \# times log needs to be applied to n until the result is &le;1
-+ e.g., let \` lg = log_2 \`:
-  + then \` lg^**(16) = 3 \`, because
-  lg(lg(lg(16))) = lg(lg(4)) = lg(2) = 1
++ \# **times** *log* needs to be applied to *n* until the result is *&le;1*
++ e.g., let lg = \` log_2 \`:
+  + then \` text(lg)^**(16) = 3 \`, because
+  + lg(lg(lg(16))) = lg(lg(4)) = lg(2) = 1
 
 ---
 ## Fibonacci and golden ratio
@@ -247,7 +258,7 @@ Summation notation: \`sum_2^n t_j = t_2 + t_3 + ... + t_n\`
 ## Fibonacci grow exponentially
 + Can prove **(#3.2-7)** that \`F\_n = (phi^n - (bar phi)^n)/sqrt 5\`
 + Second term is **fractional**: \` |(bar phi)^n|/sqrt 5 < 1/2\`
-+ So can write \` F\_n = |_ phi^n/sqrt 5 + 1/2 _| = text(round)( phi^n / sqrt 5) \`
++ So can write \` F_n = |_ phi^n/sqrt 5 + 1/2 _| = text(round)( phi^n / sqrt 5) \`
 + i.e., Fibonacci grows **exponentially**!
 
 ---
