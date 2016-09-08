@@ -72,8 +72,8 @@ Speaker notes go here.
 ---
 ## Problem definition: Sorting
 + Input: **array** of key-value pairs
-  + wlog, assume **keys** are 1 ... n
-  + **values** (payload): any data
+  + wlog, assume **keys** are *1* ... *n*
+  + **values** (payload) can be any data
 + Output: array **sorted** by key
   + **in-place**: modify original array
   + **out-of-place**: return a copy
@@ -88,6 +88,8 @@ Speaker notes go here.
 
 Analogy: sorting a hand of **cards** one by one
 
+<div class="imgbox"><div>
+
 ```
 insertion_sort(A, n):
   for j = 2 to n:
@@ -99,10 +101,20 @@ insertion_sort(A, n):
     A[i+1] = key
 ```
 
-Not the **fastest** solution, but pretty **easy** to code
+</div><div>
 
->>>
-TODO: illustration
+| In: |  *E*&rarr; | **B**      |   D        |   F        |   A        |   C        |
+|-----|------------|------------|------------|------------|------------|------------|
+| j=3 |   B        |  *E*&rarr; | **D**      |   F        |   A        |   C        |
+| j=4 |   B        |   D        |  *E*&rarr; | **F**      |   A        |   C        |
+| j=5 |  *B*&rarr; |  *D*&rarr; |  *E*&rarr; |  *F*&rarr; | **A**      |   C        |
+| j=6 |   A        |   B        |  *D*&rarr; |  *E*&rarr; |  *F*&rarr; | **C**      |
+|-----|------------|------------|------------|------------|------------|------------|
+| Out:|   A        |   B        |   C        |   D        |   E        |   F        |
+
+</div></div>
+
+Not the **fastest** solution, but pretty **easy** to code
 
 ---
 ## Proof of correctness
