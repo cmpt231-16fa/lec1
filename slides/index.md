@@ -99,12 +99,12 @@ insertion_sort(A, n):
 ```
 </div><div data-markdown>
 
-| In: |  *E*&rarr; | **B**      |   D        |   F        |   A        |   C        |
+| In: |  *E* | **B**      |   D        |   F        |   A        |   C        |
 |-----|------------|------------|------------|------------|------------|------------|
-| j=3 |   B        |  *E*&rarr; | **D**      |   F        |   A        |   C        |
-| j=4 |   B        |   D        |  *E*&rarr; | **F**      |   A        |   C        |
-| j=5 |  *B*&rarr; |  *D*&rarr; |  *E*&rarr; |  *F*&rarr; | **A**      |   C        |
-| j=6 |   A        |   B        |  *D*&rarr; |  *E*&rarr; |  *F*&rarr; | **C**      |
+| j=3 |   B        |  *E* | **D**      |   F        |   A        |   C        |
+| j=4 |   B        |   D        |  *E* | **F**      |   A        |   C        |
+| j=5 |  *B* |  *D* |  *E* |  *F* | **A**      |   C        |
+| j=6 |   A        |   B        |  *D* |  *E* |  *F* | **C**      |
 | Out:|   A        |   B        |   C        |   D        |   E        |   F        |
 
 </div></div>
