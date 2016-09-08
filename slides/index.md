@@ -23,7 +23,7 @@ Speaker notes go here.
   + Logic, **proofs**
 + Comfortable **coding** environment
   + Python, C++, Java, etc.
-  + not until **later** in semester
+  + but not until **later** in semester
 
 ---
 ## Outline for today
@@ -42,7 +42,7 @@ Speaker notes go here.
   + English, pseudocode, UML diagrams, etc.
 + Programming languages for **implementation**:
   + Python, C, Java, etc.
-+ Focus not on **toolkits** but **problem solving**
++ Focus: not **toolkits** but **problem solving**
 
 ---
 ## Algorithmic complexity
@@ -101,7 +101,8 @@ Not the **fastest** solution, but pretty **easy** to code
 TODO: illustration
 
 ---
-## Loop invariant
+## Proof of correctness
++ Loop **invariant**:
 + Property that is true **before**, **during**, and **after** loop
 + For insertion sort: at each iteration of loop,
   + part of array `A[1 .. j-1]` is in **sorted** order
@@ -118,7 +119,7 @@ insertion_sort(A, n):
 ```
 
 ---
-## Complexity of insertion sort
+## Complexity analysis
 Let \`t_j\` be num times the loop condition is checked
 in the inner "while" loop:
 
@@ -136,7 +137,7 @@ insertion_sort(A, n):
 Summation notation: \`sum_2^n t_j = t_2 + t_3 + ... + t_n\`
 
 ---
-## Best vs. Worst case
+## Best vs. worst case
 + **Best** case is if input is **pre-sorted**:
   + Still need to **scan** to verify sorted,
   + But inner **while** loop only has 1 iteration: \`t_j=1\`
