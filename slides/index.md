@@ -1,3 +1,4 @@
+<!-- .slide: data-background-image="http://sermons.seanho.com/img/bg/unsplash-NEgEJmN3JZo-boardwalk_grass.jpg" -->
 # CMPT231
 ## Data Structures and Algorithms
 ### Dr. Sean Ho
@@ -26,13 +27,15 @@ Speaker notes go here.
   + but not until **later** in semester
 
 ---
+<!-- .slide: data-background-image="http://sermons.seanho.com/img/bg/unsplash-NEgEJmN3JZo-boardwalk_grass.jpg" -->
 ## Outline for today
 + **Algorithmic** analysis
   + **Insertion** sort
 + Discrete **math** review
-  + Monotonicity, limits, iterated func
-  + Proofs
-+ **Asymptotic** notation: O(n), &Omega;(n)
+  + **Logic** and proofs
+  + Monotonicity, limits, iterated functions
++ **Asymptotic** notation: &Theta, O, &Omega;, o, &omega;
+  + **Proving** asymptotic bounds
 
 ---
 ## What is an algorithm?
@@ -171,7 +174,15 @@ Summation notation: \`sum_2^n t_j = t_2 + t_3 + ... + t_n\`
 + We'll define &Theta; more **precisely** later today
 
 ---
-## Outline
+<!-- .slide: data-background-image="http://sermons.seanho.com/img/bg/unsplash-NEgEJmN3JZo-boardwalk_grass.jpg" -->
+## Outline for today
++ **Algorithmic** analysis
+  + **Insertion** sort
++ Discrete **math** review
+  + **Logic** and proofs
+  + Monotonicity, limits, iterated functions
++ **Asymptotic** notation: &Theta, O, &Omega;, o, &omega;
+  + **Proving** asymptotic bounds
 
 ---
 ## Logic notation
@@ -262,7 +273,15 @@ Summation notation: \`sum_2^n t_j = t_2 + t_3 + ... + t_n\`
 + i.e., Fibonacci grows **exponentially**!
 
 ---
-## Outline
+<!-- .slide: data-background-image="http://sermons.seanho.com/img/bg/unsplash-NEgEJmN3JZo-boardwalk_grass.jpg" -->
+## Outline for today
++ **Algorithmic** analysis
+  + **Insertion** sort
++ Discrete **math** review
+  + **Logic** and proofs
+  + Monotonicity, limits, iterated functions
++ **Asymptotic** notation: &Theta, O, &Omega;, o, &omega;
+  + **Proving** asymptotic bounds
 
 ---
 ## Asymptotic growth: &Theta;, O, &Omega;
@@ -365,4 +384,17 @@ TODO: graph
   + \` = omega( (log n) 3 ) = omega(log(n^3)) \`
 + So by **monotonicity**, \`(log n)! in omega(n^3)\`
 
+---
+<!-- .slide: data-background-image="http://sermons.seanho.com/img/bg/unsplash-NEgEJmN3JZo-boardwalk_grass.jpg" -->
+## Outline for today
++ **Algorithmic** analysis
+  + **Insertion** sort
++ Discrete **math** review
+  + **Logic** and proofs
+  + Monotonicity, limits, iterated functions
++ **Asymptotic** notation: &Theta, O, &Omega;, o, &omega;
+  + **Proving** asymptotic bounds
+
+---
+<!-- .slide: data-background-image="http://sermons.seanho.com/img/bg/unsplash-NEgEJmN3JZo-boardwalk_grass.jpg" class="empty" -->
 
