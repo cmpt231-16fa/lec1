@@ -255,10 +255,10 @@ Summation notation: \`sum_2^n t_j = t_2 + t_3 + ... + t_n\`
   + &phi; &asymp; 1.61803, and \`bar phi\` &asymp; -0.61803
 
 ---
-## Fibonacci grow exponentially
+## Fibonacci grows exponentially
 + Can **prove** *(#3.2-7)* that \`F\_n = (phi^n - (bar phi)^n)/sqrt 5\`
 + Second term is **fractional**: \` |(bar phi)^n|/sqrt 5 < 1/2\`
-+ So can write \`F\_n = |\_\_ phi^n/sqrt 5 + 1/2 \_\_| = text(round)( phi^n / sqrt 5) \`
++ Thus: \`F\_n = |\_\_ phi^n/sqrt 5 + 1/2 \_\_| = text(round)( phi^n / sqrt 5) \`
 + i.e., Fibonacci grows **exponentially**!
 
 ---
