@@ -84,11 +84,7 @@ Speaker notes go here.
 
 ---
 <!-- .slide: data-background-image="http://sermons.seanho.com/img/bg/pixabay-726797-cards_monalisa.jpg" -->
-## One algo: insertion sort
-
-Analogy: sorting a hand of **cards** one by one
-
-<div class="imgbox"><div>
+## Insertion sort: hand of cards
 
 ```
 insertion_sort(A, n):
@@ -101,8 +97,6 @@ insertion_sort(A, n):
     A[i+1] = key
 ```
 
-</div><div>
-
 | In: |  *E*&rarr; | **B**      |   D        |   F        |   A        |   C        |
 |-----|------------|------------|------------|------------|------------|------------|
 | j=3 |   B        |  *E*&rarr; | **D**      |   F        |   A        |   C        |
@@ -112,8 +106,7 @@ insertion_sort(A, n):
 |-----|------------|------------|------------|------------|------------|------------|
 | Out:|   A        |   B        |   C        |   D        |   E        |   F        |
 
-</div></div>
-
+>>>
 Not the **fastest** solution, but pretty **easy** to code
 
 ---
