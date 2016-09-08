@@ -141,7 +141,7 @@ Summation notation: \`sum_2^n t_j = t_2 + t_3 + ... + t_n\`
 + **Worst** case: input is in **reverse** order!
   + Inner "while" loop always max iterations: \`t_j=j\`
   + Total complexity for line 5:
-    \` c_4 * sum_2^n(t_j-1) = c_4*sum_2^n(j-1) = c_4*(n-1)*n/2 = (c_4/2)n^2 - n/2 \`
+    \` c_4 sum_2^n(t_j-1) = c_4 sum_2^n(j-1) = c_4 (n-1)*n/2 = (c_4/2)n^2 - n/2 \`
   + **Quadratic** in n
 + **Average** case: input is random, \`t_j=j/2\` on average
   + Still **quadratic** in n
@@ -177,25 +177,25 @@ Summation notation: \`sum_2^n t_j = t_2 + t_3 + ... + t_n\`
 + \` f^((i))(x) \`: function f, applied i times to x:
   f(f(f(... f(x) ...)))
   + **Not** the same as \` f^i(x) = (f(x))^i \`
-+ e.g., \` log^((2))(1000) = log(log(1000)) = log(3) ~~ 0.477 \`
-  + But \` log^2(1000) = (log(1000))^2 = 3^2 = 9 \`
-+ Define \` f^((0))(x) = x \` (i.e., apply f zero times)
++ e.g., \` log^((2))(1000) \` = log(log(1000)) = log(3) &asymp; 0.477
+  + But \` log^2(1000) = (log(1000))^2 = 3^2 \` = 9
++ By convention, \` f^((0))(x) = x \` (apply f zero times)
 + **Iterated log**: \` log^**(n) = min(i>=0: log^((i))(n)<=1) \`
   + \# times log needs to be applied to n until the result is &le;1
   + e.g., let \` lg = log_2 \`: then \` lg^**(16) = 3 \` because
-    \` lg(lg(lg(16))) = lg(lg(4)) = lg(2) = 1 \`
+    lg(lg(lg(16))) = lg(lg(4)) = lg(2) = 1
 
 ---
 ## Fibonacci and golden ratio
-+ The n-th **Fibonacci number** is \`F_ n = F_ (n-1) + F_ (n-2)\`
++ The n-th **Fibonacci number** is \`F\_n=F\_(n-1) + F\_(n-2)\`
   + Start with \`F_0=0, F_1=1\`: 0, 1, 1, 2, 3, 5, 8, 13, 21, ...
   + (Lucas numbers start with \`F_0=2\`)
-+ The **Golden ratio** &phi; (and its conjugate, \`bar phi\`)
-  satisfy \`x^2 = x+1\`
-  + \` phi = (1 +- sqrt 5)/2 ~~ 1.61803 and -0.61803 \`
-+ Can prove (#3.2-7) that \`F_ n = (phi^n (bar phi)^n)/sqrt 5\`
++ The **Golden ratio** &phi; (and conjugate, \`bar phi\`)
+  satisfy \`phi^2 = phi+1\`
+  + \` phi = (1 +- sqrt 5)/2 \` &asymp; 1.61803 and -0.61803
++ Can prove (#3.2-7) that \`F\_n = (phi^n (bar phi)^n)/sqrt 5\`
   + Second term is fractional: \` |(bar phi)^n|/sqrt 5 < 1/2\`
-  + So can write \` F_ n = |_ phi^n/sqrt 5 + 1/2 _| = text round( phi^n / sqrt 5) \`
+  + So can write \` F\_n = |\_ phi^n/sqrt 5 + 1/2 \_| = text round( phi^n / sqrt 5) \`
   + i.e., Fibonacci grows **exponentially**!
 
 ---
@@ -204,20 +204,19 @@ Summation notation: \`sum_2^n t_j = t_2 + t_3 + ... + t_n\`
   + if A = "it is Tue", then \`not A\` = "it is not Tue"
 + A &rArr; B: "**implies**", "if A, then B"
   + if B = "meatloaf", then A &rarr; B = "if Tue, then meatloaf"
-+ A &hArr; B: if and only if ("**iff**")
-  + (A &rArr; B) and (B &rArr; A)
++ A &hArr; B: if and only if ("**iff**"): (A &rArr; B) and (B &rArr; A)
 + \`forall\`: "**for all**"
-  + "\`forall text day:\` meal(day) = meatloaf"
+  + "&forall; day: meal(day) = meatloaf"
   + "For all days, the meal on that day is meatloaf"
 + \`exists\`: "there **exists**" (not necessarily unique)
-  + "\`exists day:\` meal(day) = meatloaf"
+  + "&exist; day: meal(day) = meatloaf"
   + "There exists a day on which the meal is meatloaf"
 
 ---
 ## Mathematical logic
 + **Contrapositive** of "A &rArr; B" is \`not B => not A\`
   + **Equivalent** to original statement
-  + "If Tue, then meatloaf" &hArr; "if not meatloaf, then not Tue"
+  + "If Tue, then meatloaf" &hArr; <br/> "if not meatloaf, then not Tue"
 + **Converse** of "A &rArr; B" is "\`not A => not B\`"
   + **Not** equivalent to original statement!
   + "if not Tue, then not meatloaf"
@@ -264,48 +263,52 @@ TODO: graph
   + e.g., \` 2n^2 + 3n = Theta(n^2) \`
 + When Theta (et al) are on the **left** side of =:
   + It means "**for all**" \`f in Theta(g)\`
-  + e.g., \` 4n^2 + Theta(n lg(n)) = Theta(n^2) \`
-  + True for **any** function in \`Theta(n lg(n))\`
+  + e.g., \` 4n^2 + Theta(n log(n)) = Theta(n^2) \`
+  + True for **any** function in \`Theta(n log(n))\`
 
 ---
 ## Asymptotic domination: o, &omega;
-+ "**Little o**": like a strict **less than** inequality:
-  + \`f in o(g) iff forall c > 0 exists n_0: 0 <= f(n) < c g(n), forall n > n_0\`
++ "**Little o**": like a strict **less than** inequality: f &isin; o(g) &hArr;
+  + \`forall c > 0 exists n_0: 0 <= f(n) < c g(n), forall n > n_0\`
   + i.e., \` lim_(n->oo) f(n)/g(n) = 0\`
-+ "**Little omega**": like a strict **greater than**:
-  + \`f in omega(g) iff forall c > 0 exists n_0: 0 <= c g(n) < f(n), forall n > n_0\`
++ "**Little omega**": like a strict **greater than**: f &isin; &omega;(g) &hArr;
+  + \`forall c > 0 exists n_0: 0 <= c g(n) < f(n), forall n > n_0\`
   + i.e., \` lim_(n->oo) f(n)/g(n) = oo\`
-+ e.g.: \` n^1.999 in o(n^2), and n^2/lg(n) in o(n^2) \`,
++ e.g.: \` n^1.999 in o(n^2), and n^2/log(n) in o(n^2) \`,
   but \` n^2/10000 notin o(n^2) \`
-+ e.g.,: \` n^2.0001 in omega(n^2), and n^2 lg(n) = omega(n^2) \`
++ e.g.,: \` n^2.0001 in omega(n^2), and n^2 log(n) = omega(n^2) \`
 
 ---
 ## Useful math identities
 + All **logs** are same up to a constant factor:
-  + \` log_a(n) = log_ b(n) / log_ b(a) \`
+  + \` log\_a(n) = log\_b(n) / log\_b(a) \`
   + So often use \` lg = log_2 \` for convenience
-+ \` Theta(1) sub o(lg(n)) sub o(n) sub o(n^(p)) sub o(p^n) \`
-  + For any constants p &gt; 1
++ \` Theta(1) sub o(log(n)) sub o(n) sub o(n^(p)) sub o(p^n) \`
+  + For any constant p &gt; 1
 + In fact, \` forall a>1, b: lim_(n->oo) n^b / a^n = 0 \`
   + Hence, \` n^b in o(a^n) \`
   + *"Exponentials dominate polynomials"*
-+ Factorial: n! = n(n-1)(n-2)...(2)(1)
-  + **Stirling's approx**:
-    \` n! = sqrt(2pi n)(n/e)^n (1+Theta(1/n)) \`
-  + And hence \` lg(n!) in Theta(n lg(n)) \`
+
+---
+## Stirling's approximation
++ **Factorial**: n! = n(n-1)(n-2)...(2)(1)
+  + Number of **permutations** of n distinct objects
++ **Stirling's approx**:
+  \` n! = sqrt(2pi n)(n/e)^n (1+Theta(1/n)) \`
++ Hence, \` log(n!) in Theta(n log(n)) \`
 
 ---
 ## Proving asymptotic behaviour
-+ **(p.62 #3-3)**: Prove: \`(lg n)! in omega(n^3)\`
-+ **Approach**: take lg of both sides (lg is monotone)
++ **(p.62 #3-3)**: Prove: \`(log n)! in omega(n^3)\`
++ **Approach**: take log of both sides (log is monotone)
 + **Left side**: use Stirling:
   \` n! = sqrt(2pi n)(n/e)^n (1+Theta(1/n)) \`
-  + So \` lg(n!) in Theta(n lg(n)) \`
-  + Now **substitute** lg(n) for n, using monotonicity of lg:
-    + So \` lg((lg n)!) in Theta( (lg n) lg(lg n) ) \`
-+ **Right side**: \`lg(n^3) = 3lg n\`
-  + This is close to the left side, with 3 instead of lg(lg n)
-  + But we only need an &omega; bound, and \` lg(lg n) in omega(3) \`
-+ **Combining**: \` lg((lg n)!) in Theta( (lg n) lg(lg n) ) \`
-  + \` = omega( (lg n) 3 ) = omega(lg(n^3)) \`
-+ So by monotonicity, \`(lg n)! in omega(n^3)\`
+  + So log(n!) &isin; &Theta;(n log(n))
+  + Now **substitute** log(n) for n, using monotonicity of log:
+    + So log((log n)!) &isin; &Theta;( (log n) log(log n) )
++ **Right side**: \`log(n^3) = 3lg n\`
+  + This is close to the left side, with 3 instead of log(log n)
+  + But we only need an &omega; bound, and log(log n) &isin; &omega;(3)
++ **Combining**: log((log n)!) &isin; &Theta;( (log n) log(log n) )
+  + = &omega;( (log n) 3 ) = \` omega(log(n^3)) \`
++ So by monotonicity, \`(log n)! in omega(n^3)\`
