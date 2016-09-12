@@ -305,6 +305,7 @@ Summation notation: \`sum_2^n t_j = t_2 + t_3 + ... + t_n\`
   + **Proving** asymptotic bounds
 
 ---
+<!-- .slide: data-background-image="static/img/Fig-3-1-theta.png" -->
 ## Asymptotic growth: &Theta;, O, &Omega;
 + Behaviour "**in the limit**" (big n)
 + Define &Theta; as **class** of functions: *f(n)* &isin; *&Theta;( g(n) )* iff
