@@ -251,8 +251,8 @@ Summation notation: \`sum_2^n t_j = t_2 + t_3 + ... + t_n\`
 + \` f^((i))(x) \`: function *f*, **applied** *i* times to *x*:
   f(f(f(... f(x) ...)))
   + **Not** the same as \` f^i(x) = (f(x))^i \`
-+ e.g., \` log^((2))(1000) \` = log(log(1000)) = log(3) &asymp; 0.477
-  + But \` log^2(1000) = (log(1000))^2 = 3^2 \` = 9
++ e.g., \` log^((2))(1000) \` = log(log(1000)) = log(3) &asymp; *0.477*
+  + But \` log^2(1000) = (log(1000))^2 = 3^2 \` = *9*
 + By convention, \` f^((0))(x) = x \` (apply *f* **zero** times)
 
 ---
@@ -261,7 +261,7 @@ Summation notation: \`sum_2^n t_j = t_2 + t_3 + ... + t_n\`
 + \# **times** *log* needs to be applied to *n* until the result is *&le;1*
 + e.g., let lg = \` log_2 \`:
   + then \` text(lg)^**(16) = 3 \`, because
-  + lg(lg(lg(16))) = lg(lg(4)) = lg(2) = 1
+  + lg( lg( lg(16) ) ) = lg( lg(4) ) = lg(2) = 1
 
 ---
 <!-- .slide: data-background-image="http://sermons.seanho.com/img/bg/unsplash-_jN5_9zu8DM-sunflower.jpg" -->
@@ -306,16 +306,16 @@ Summation notation: \`sum_2^n t_j = t_2 + t_3 + ... + t_n\`
 
 ---
 ## Asymptotic growth: &Theta;, O, &Omega;
-+ Behaviour "in the limit" (big n)
-+ Define **Theta** as class of functions: f(n) &isin; *&Theta;(g(n))* iff
-  + &exist; c1, c2, n0: &forall; n &gt; n0,
++ Behaviour "**in the limit**" (big n)
++ Define &Theta; as **class** of functions: *f(n)* &isin; *&Theta;( g(n) )* iff
+  + &exist; *c1, c2, n0*: &forall; *n* &gt; n0,
   0 &le; *c1 g(n)* &le; *f(n)* &le; *c2 g(n)*
   + *f* is "**sandwiched**" between two multiples of *g*:
-    c1 g(n) and c2 g(n)
-+ "Big O": specify only **upper** bound: f(n) &isin; *O(g(n))* iff
-  + &exist; c2, n0: &forall; n &gt; n0, 0 &le; *f(n)* &le; *c2 g(n)*
+    + *c1 g(n)* and *c2 g(n)*
++ "**Big O**": specify only **upper** bound: f(n) &isin; *O( g(n) )* iff
+  + &exist; *c2, n0*: &forall; *n* &gt; n0, 0 &le; *f(n)* &le; *c2 g(n)*
   + e.g., \`Theta(n^2) sub O(n^2) sub O(n^3) \`
-+ "Big Omega": &Omega;(g(n)) specifies only the **lower** bound
++ "**Big Omega**": &Omega;( g(n) ) specifies only the **lower** bound
   + Think of other examples?
 
 ---
@@ -328,9 +328,10 @@ Summation notation: \`sum_2^n t_j = t_2 + t_3 + ... + t_n\`
 
 ---
 ## Prove: (n+a)^b &isin; &Theta;(n^b)
-+ **Observe** that *n+a &ge; n/2*, as long as n &gt; 2|a|
-  + Also, *n+a &le; 2n*, as long as n &gt; |a|
-  + Hence, *n+a* is **sandwiched** by *n/2* and *2n* (if n &gt; 2|a|)
++ **Observe** that *n+a &ge; n/2*, as long as n &gt; *2|a|*
+  + Also, *n+a &le; 2n*, as long as n &gt; *|a|*
+  + Hence, *n+a* is **sandwiched** by *n/2* and *2n* (if n &gt; 2|a|):
+    + *n/2* &le; *n+a* &le; *2n*
 + **Raise** to the *b* power (\`x^b\` is **monotone** if x &gt; 1, b &gt; 0)
   + Thus, \`(n/2)^b <= (n+a)^b <= (2n)^b\` (for n &gt; 2|a|)
 + So we select \`n_0 = 2|a|, c_1 = 2^(-b), c_2 = 2^b\`
@@ -340,21 +341,21 @@ Summation notation: \`sum_2^n t_j = t_2 + t_3 + ... + t_n\`
 ## Asymptotic shorthand
 + &Theta;(g) is a **class** of functions
   + But for convenience, some **short-hand** notation:
-+ When &Theta; (et al) are on the **right** side of =:
++ When *&Theta;* (et al) are on the **right** side of =:
   + It means "there **exists**" \`f in Theta(g)\`
   + e.g., \` 2n^2 + 3n = Theta(n^2) \`
-+ When &Theta; (et al) are on the **left** side of =:
++ When *&Theta;* (et al) are on the **left** side of =:
   + It means "**for all**" \`f in Theta(g)\`
   + e.g., \` 4n^2 + Theta(n log(n)) = Theta(n^2) \`
   + True for **any** function in \`Theta(n log(n))\`
 
 ---
 ## Asymptotic domination: o, &omega;
-+ "**Little o**": like a strict **less than** inequality: f &isin; *o(g)* iff
-  + &forall; c > 0 &exist; n0: &forall; n > n0, 0 &le; *f(n)* < *c g(n)*
++ "**Little o**": like a strict **less than** inequality: *f* &isin; *o(g)* iff
+  + &forall; *c* > 0 &exist; *n0*: &forall; *n* > n0, 0 &le; *f(n)* < *c g(n)*
   + i.e., the **limit** of *f(n)/g(n)* &rarr; 0 as n &rarr; &infin;
-+ "**Little omega**": like a strict **greater than**: f &isin; *&omega;(g)* iff
-  + &forall; c > 0 &exist; n0: &forall; n > n0, 0 &le; *c g(n)* < *f(n)*
++ "**Little omega**": like a strict **greater than**: *f* &isin; *&omega;(g)* iff
+  + &forall; *c* > 0 &exist; *n0*: &forall; *n* > n0, 0 &le; *c g(n)* < *f(n)*
   + i.e., the **limit** of *f(n)/g(n)* &rarr; &infin; as n &rarr; &infin;
 
 ---
