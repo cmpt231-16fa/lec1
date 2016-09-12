@@ -268,7 +268,7 @@ Summation notation: \`sum_2^n t_j = t_2 + t_3 + ... + t_n\`
 ## Fibonacci sequence
 + The n-th **Fibonacci number** is \`F\_n=F\_(n-1) + F\_(n-2)\`
   + Start with \`F_0=0, F_1=1:\`
-  + \`F_n=0, 1, 1, 2, 3, 5, 8, 13, 21, ...\`
+  + \`F_n\` = *0, 1, 1, 2, 3, 5, 8, 13, 21,* ...
   + (Lucas numbers start with \`F_0=2\`)
 + Shows up all over **nature**
   + Num of **spirals** on sunflowers, pinecones, etc.
@@ -277,10 +277,10 @@ Summation notation: \`sum_2^n t_j = t_2 + t_3 + ... + t_n\`
 ---
 <!-- .slide: data-background-image="static/bg/nautilus-cutaway-shell.jpg" -->
 ## The Golden ratio &phi;
-+ &phi; is the solution to the equation \`x^2 = x+1\`
++ &phi; is the **solution** to the equation \`x^2 = x+1\`
   + \` phi = (1 +- sqrt 5)/2 \`
   + Actually, two solutions: &phi; and its **conjugate**, \`bar phi\`
-  + &phi; &asymp; 1.61803, and \`bar phi\` &asymp; -0.61803
+  + &phi; &asymp; *1.61803*, and \`bar phi\` &asymp; *-0.61803*
 + Also shows up all over **nature**
   + Dimensions of **Nautilus** seashells, spiral **galaxies**, etc.
   + **Aspect ratio** in architecture, e.g., Parthenon
