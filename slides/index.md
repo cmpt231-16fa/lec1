@@ -55,7 +55,7 @@ Speaker notes go here.
 + Depends on machine **architecture**
   + CPUs generally **sequential**
   + GPUs are massively **parallel**
-+ **Running time** is more complex
++ **Running time** is more complex than this
   + Cache / **memory** very important
 
 ---
@@ -265,19 +265,29 @@ Summation notation: \`sum_2^n t_j = t_2 + t_3 + ... + t_n\`
 
 ---
 <!-- .slide: data-background-image="http://sermons.seanho.com/img/bg/unsplash-_jN5_9zu8DM-sunflower.jpg" -->
-## Fibonacci and golden ratio
+## Fibonacci sequence
 + The n-th **Fibonacci number** is \`F\_n=F\_(n-1) + F\_(n-2)\`
   + Start with \`F_0=0, F_1=1:\`
   + \`F_n=0, 1, 1, 2, 3, 5, 8, 13, 21, ...\`
   + (Lucas numbers start with \`F_0=2\`)
-+ The **Golden ratio** &phi; satisfies \`phi^2 = phi+1\`
-  + Also its **conjugate**, \`bar phi\`
++ Shows up all over **nature**
+  + Num of **spirals** on sunflowers, pinecones, etc.
+  + [Vi Hart video: Doodling in Math ![YouTube](static/img/vi-fib.jpg)](https://www.youtube.com/watch?v=ahXIMUkSXX0)
+
+---
+<!-- .slide: data-background-image="static/bg/nautilus-cutaway-shell.jpg" -->
+## The Golden ratio &phi;
++ &phi; is the solution to the equation \`x^2 = x+1\`
   + \` phi = (1 +- sqrt 5)/2 \`
+  + Actually, two solutions: &phi; and its **conjugate**, \`bar phi\`
   + &phi; &asymp; 1.61803, and \`bar phi\` &asymp; -0.61803
++ Also shows up all over **nature**
+  + Dimensions of **Nautilus** seashells, spiral **galaxies**, etc.
+  + **Aspect ratio** in architecture, e.g., Parthenon
 
 ---
 <!-- .slide: data-background-image="http://sermons.seanho.com/img/bg/unsplash-_jN5_9zu8DM-sunflower.jpg" -->
-## Fibonacci grows exponentially
+## Fibonacci + golden ratio
 + Can **prove** *(#3.2-7)* that \`F\_n = (phi^n - (bar phi)^n)/sqrt 5\`
 + Second term is **fractional**: \` |(bar phi)^n|/sqrt 5 < 1/2\`
 + Thus: \`F\_n = |\_\_ phi^n/sqrt 5 + 1/2 \_\_| = text(round)( phi^n / sqrt 5) \`
