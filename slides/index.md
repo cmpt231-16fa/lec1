@@ -236,13 +236,13 @@ Summation notation: \`sum_2^n t_j = t_2 + t_3 + ... + t_n\`
 
 ---
 ## Limits
-+ Formal definitions involve &forall; and &exist;
-+ \` lim_(x->a) f(x) = b \`: "**limit** of f(x) as x goes to a"
-  + &forall; &epsilon; &gt; 0, &exist; &delta; &gt; 0:
++ Formal **definitions** of limits involve &forall; and &exist;
++ \` lim_(x->a) f(x) = b \`: "**limit** of *f(x)* as *x* goes to *a*"
+  + &forall; *&epsilon;* &gt; 0, &exist; *&delta;* &gt; 0:
     *|x-a| &lt; &delta;* &rArr; *|f(x)-b| &lt; &epsilon;*
   + When *x* is "close" to *a*, then *f(x)* is "close" to *b*
-+ \` lim_(n->oo) f(n) = b \`: "**limit** of f(n) as n goes to infinity":
-  + &forall; &epsilon; &gt; 0, &exist; n0:
++ \` lim_(n->oo) f(n) = b \`: "**limit** of *f(n)* as *n* goes to infinity":
+  + &forall; *&epsilon;* &gt; 0, &exist; *n0*:
     *n &gt; n0* &rArr; *|f(n)-b| &lt; &epsilon;*
   + When *n* is "big", *f(n)* is "close" to *b*
 
