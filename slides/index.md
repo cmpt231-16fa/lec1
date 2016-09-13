@@ -39,7 +39,7 @@ for he **grants sleep** to those he loves.
 
 ---
 ## What you need to succeed in 231
-+ **Tinkerer's** heart (self-motivated)
++ **Explorer's** heart (self-motivated)
 + Discrete **math** (e.g., MATH150)
   + Logic, **proofs**
 + Comfortable **coding** environment
@@ -54,6 +54,7 @@ for he **grants sleep** to those he loves.
 + Discrete **math** review
   + **Logic** and proofs
   + Monotonicity, limits, iterated functions
+  + **Fibonacci** sequence and golden ratio
 + **Asymptotic** notation: &Theta;, O, &Omega;, o, &omega;
   + **Proving** asymptotic bounds
 
@@ -101,6 +102,18 @@ for he **grants sleep** to those he loves.
   + Python: `sort()`, `sorted()`
   + C++/Java: `sort()`
   + **How** do they do it?
+
+---
+<!-- .slide: data-background-image="http://sermons.seanho.com/img/bg/unsplash-NEgEJmN3JZo-boardwalk_grass.jpg" -->
+## Outline for today
++ Algorithmic analysis
+  + **Insertion sort**
++ Discrete math review
+  + Logic and proofs
+  + Monotonicity, limits, iterated functions
+  + Fibonacci sequence and golden ratio
++ Asymptotic notation: &Theta;, O, &Omega;, o, &omega;
+  + Proving asymptotic bounds
 
 ---
 <!-- .slide: data-background-image="http://sermons.seanho.com/img/bg/pixabay-726797-cards_monalisa.jpg" -->
@@ -205,13 +218,14 @@ Summation notation: \`sum_2^n t_j = t_2 + t_3 + ... + t_n\`
 ---
 <!-- .slide: data-background-image="http://sermons.seanho.com/img/bg/unsplash-NEgEJmN3JZo-boardwalk_grass.jpg" -->
 ## Outline for today
-+ **Algorithmic** analysis
-  + **Insertion** sort
-+ Discrete **math** review
-  + **Logic** and proofs
++ Algorithmic analysis
+  + Insertion sort
++ **Discrete math review**
+  + **Logic and proofs**
   + Monotonicity, limits, iterated functions
-+ **Asymptotic** notation: &Theta;, O, &Omega;, o, &omega;
-  + **Proving** asymptotic bounds
+  + Fibonacci sequence and golden ratio
++ Asymptotic notation: &Theta;, O, &Omega;, o, &omega;
+  + Proving asymptotic bounds
 
 ---
 ## Logic notation
@@ -243,6 +257,18 @@ Summation notation: \`sum_2^n t_j = t_2 + t_3 + ... + t_n\`
 + **Converse** of "A &rArr; B" is "\`not A => not B\`"
   + **Not** equivalent to original statement!
   + "*if not Tue, then not meatloaf*"
+
+---
+<!-- .slide: data-background-image="http://sermons.seanho.com/img/bg/unsplash-NEgEJmN3JZo-boardwalk_grass.jpg" -->
+## Outline for today
++ Algorithmic analysis
+  + Insertion sort
++ Discrete math review
+  + Logic and proofs
+  + **Monotonicity, limits, iterated functions**
+  + Fibonacci sequence and golden ratio
++ Asymptotic notation: &Theta;, O, &Omega;, o, &omega;
+  + Proving asymptotic bounds
 
 ---
 ## Monotonicity
@@ -284,6 +310,18 @@ Summation notation: \`sum_2^n t_j = t_2 + t_3 + ... + t_n\`
   + lg( lg( lg(16) ) ) = lg( lg(4) ) = lg(2) = 1
 
 ---
+<!-- .slide: data-background-image="http://sermons.seanho.com/img/bg/unsplash-NEgEJmN3JZo-boardwalk_grass.jpg" -->
+## Outline for today
++ Algorithmic analysis
+  + Insertion sort
++ Discrete math review
+  + Logic and proofs
+  + Monotonicity, limits, iterated functions
+  + **Fibonacci sequence and golden ratio**
++ Asymptotic notation: &Theta;, O, &Omega;, o, &omega;
+  + Proving asymptotic bounds
+
+---
 <!-- .slide: data-background-image="http://sermons.seanho.com/img/bg/unsplash-_jN5_9zu8DM-sunflower.jpg" -->
 ## Fibonacci sequence
 + The n-th **Fibonacci number** is \`F\_n=F\_(n-1) + F\_(n-2)\`
@@ -316,13 +354,14 @@ Summation notation: \`sum_2^n t_j = t_2 + t_3 + ... + t_n\`
 ---
 <!-- .slide: data-background-image="http://sermons.seanho.com/img/bg/unsplash-NEgEJmN3JZo-boardwalk_grass.jpg" -->
 ## Outline for today
-+ **Algorithmic** analysis
-  + **Insertion** sort
-+ Discrete **math** review
-  + **Logic** and proofs
++ Algorithmic analysis
+  + Insertion sort
++ Discrete math review
+  + Logic and proofs
   + Monotonicity, limits, iterated functions
-+ **Asymptotic** notation: &Theta;, O, &Omega;, o, &omega;
-  + **Proving** asymptotic bounds
+  + Fibonacci sequence and golden ratio
++ **Asymptotic notation: &Theta;, O, &Omega;, o, &omega;**
+  + Proving asymptotic bounds
 
 ---
 <!-- .slide: data-background-image="static/img/Fig-3-1-theta.png" -->
@@ -405,6 +444,18 @@ Summation notation: \`sum_2^n t_j = t_2 + t_3 + ... + t_n\`
 + Hence, \` log(n!) in Theta(n log(n)) \`
 
 ---
+<!-- .slide: data-background-image="http://sermons.seanho.com/img/bg/unsplash-NEgEJmN3JZo-boardwalk_grass.jpg" -->
+## Outline for today
++ Algorithmic analysis
+  + Insertion sort
++ Discrete math review
+  + Logic and proofs
+  + Monotonicity, limits, iterated functions
+  + Fibonacci sequence and golden ratio
++ Asymptotic notation: &Theta;, O, &Omega;, o, &omega;
+  + **Proving asymptotic bounds**
+
+---
 ## Example asymptotic proof
 + **(p.62 #3-3)**: Prove: \`(log n)! in omega(n^3)\`
 + **Approach**: take *log* of both sides (log is monotone)
@@ -432,6 +483,7 @@ Summation notation: \`sum_2^n t_j = t_2 + t_3 + ... + t_n\`
 + Discrete **math** review
   + **Logic** and proofs
   + Monotonicity, limits, iterated functions
+  + **Fibonacci** sequence and golden ratio
 + **Asymptotic** notation: &Theta;, O, &Omega;, o, &omega;
   + **Proving** asymptotic bounds
 
