@@ -461,18 +461,18 @@ Summation notation: \`sum_2^n t_j = t_2 + t_3 + ... + t_n\`
 + **Approach**: take *log* of both sides (log is monotone)
 + **Left side**: use Stirling:
   \` n! = sqrt(2pi n)(n/e)^n (1+Theta(1/n)) \`
-  + So log(n!) &isin; &Theta;( *n log(n)* )
+  + So log( n! ) &isin; &Theta;( *n log(n)* )
   + Now **substitute** log(n) for n, using monotonicity of log:
-    + So log((log n)!) &isin; &Theta;( *(log n) log(log n)* )
+    + So log( (log n)! ) &isin; &Theta;( *(log n) log(log n)* )
 
 ---
 ## Prove: (log n)! = &omega;(n^3)
 + ... so: log((log n)!) &isin; &Theta;( *(log n) log(log n)* )
 + **Right side**: \`log(n^3) = 3log n\`
-  + This is **close** to the left side, with *3* instead of *log(log n)*
-  + But we only need an **&omega;** bound, and *log(log n)* &isin; &omega;(*3*)
-+ **Combining**: \`log((log n)!) in Theta( (log n) log(log n) )\`
-  + \` = omega( (log n) 3 ) = omega(log(n^3)) \`
+  + This is **close** to the left side, with *3* instead of *log( log n )*
+  + But we only need an **&omega;** bound, and *log( log n )* &isin; &omega;(*3*)
++ **Combining**: \`log( (log n)! ) in Theta( (log n) log( log n ) )\`
+  + \` = omega( (log n) 3 ) = omega( log(n^3) ) \`
 + So by **monotonicity**, \`(log n)! in omega(n^3)\`
 
 ---
