@@ -7,6 +7,26 @@
 Speaker notes go here.
 
 ---
+<!-- .slide: data-background-image="http://sermons.seanho.com/img/bg/unsplash-DtHTWqkgBZc-forest_house.jpg" -->
+## Psalm 127:1-2 (NIV)
+Unless the Lord **builds** the house, <br/>
+the builders **labor** in vain. <br/>
+Unless the Lord **watches** over the city, <br/>
+the guards **stand watch** in vain.
+
+In vain you **rise early** and **stay up** late, <br/>
+**toiling** for food to eat -- <br/>
+for he **grants sleep** to those he loves.
+
+>>>
++ "work smarter, not harder"
+  + smarter **algos**, not just better **hardware**
+  + what **God** builds, not what we build
++ success, security, sleep:
+  + all from God's **grace**
+  + all **glory** to God
+
+---
 <!-- .slide: data-background-iframe="https://cmpt231-16fa.github.io/" -->
 
 >>>
