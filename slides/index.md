@@ -457,7 +457,7 @@ Summation notation: \`sum_2^n t_j = t_2 + t_3 + ... + t_n\`
 
 ---
 ## Example asymptotic proof
-+ **(p.62 #3-3)**: Prove: \`(log n)! in omega(n^3)\`
++ *(p.62 #3-3)*: **Prove**: \`(log n)! in omega(n^3)\`
 + **Approach**: take *log* of both sides (log is monotone)
 + **Left side**: use Stirling:
   \` n! = sqrt(2pi n)(n/e)^n (1+Theta(1/n)) \`
