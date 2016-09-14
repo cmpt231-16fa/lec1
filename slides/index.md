@@ -490,3 +490,5 @@ Summation notation: \`sum_2^n t_j = t_2 + t_3 + ... + t_n\`
 ---
 <!-- .slide: data-background-image="http://sermons.seanho.com/img/bg/unsplash-NEgEJmN3JZo-boardwalk_grass.jpg" class="empty" -->
 
+>>>
+2016-09-13: finished here with 10min to spare, so started lec2 merge sort
