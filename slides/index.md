@@ -198,14 +198,14 @@ Summation notation: \`sum_2^n t_j = t_2 + t_3 + ... + t_n\`
 ## Worst case complexity
 + **Total** complexity for line 5, worst-case:
   \` c_4 sum_2^n(t_j-1) = c_4 sum_2^n(j-1) \`
-  \` = c_4 (n-1)n/2 = (c_4/2)n^2 - (1/2)n \`
+  \` = c_4 (n-1)n/2 = (c_4/2)n^2 - (c_4/2)n \`
   + **Quadratic** in n
 + **Average** case: input is random, \`t_j=j/2\` on average
   + Still quadratic (only changes by a **constant** factor)
 
 ---
 ## Theta (&Theta;) notation
-+ Insertion sort, line 5: \` (c_4 / 2) n^2 - (1/2)n \`
++ Insertion sort, line 5: \` (c_4 / 2) n^2 - (c_4/2)n \`
 + **Constants** \`c_1, c_2, ...\` may vary for different computers
   + As n gets **big**, constants become **irrelevant**
   + Even the n term is dominated by the \`n^2\` term
