@@ -4,5 +4,12 @@
 [![Node dependencies](https://david-dm.org/cmpt231-16fa/lec1.svg)](https://david-dm.org/cmpt231-16fa/lec1)
 [![Node dev status](https://david-dm.org/cmpt231-16fa/lec1/dev-status.svg)](https://david-dm.org/cmpt231-16fa/lec1#info=devDependencies)
 
+<<<<<<< HEAD
 Forked from template
 [reveal-skel](https://github.com/sermons/reveal-skel)
+=======
+Template presentation: [reveal-skel](https://github.com/sermons/reveal-skel)
+
+See [INSTALL.md](INSTALL.md)
+for how to make your own presentation.
+>>>>>>> c40078f65182b55de312716bb43ac098c23bd17a
