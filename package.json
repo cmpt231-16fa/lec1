@@ -8,13 +8,13 @@
     "algorithms",
     "ppt"
   ],
-  "version": "1.4.0",
+  "version": "1.4.2",
   "author": "Sean Ho <seanho@seanho.com> (http://seanho.com)",
   "config": {
     "pretty_url": "cmpt231.seanho.com/lec1",
     "cname": "",
     "multiplex": {
-      "url": "https://mp-seanho00.rhcloud.com:8443/",
+      "url": "https://mp.seanho.com:8443/",
       "id": "22bc761ffc97809b"
     },
     "git": {
@@ -69,9 +69,10 @@
     "grunt-build-control": "^0.7.1",
     "grunt-coffeelint": "^0.0.16",
     "coffeelint": "^1.16.0",
-    "grunt-git": "^1.0.3"
+    "grunt-git": "^1.0.4"
   },
   "scripts": {
+    "postinstall": "grunt install",
     "test": "grunt test",
     "pdf": "grunt pdf",
     "deploy": "grunt deploy"
