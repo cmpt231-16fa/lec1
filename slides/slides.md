@@ -1,4 +1,4 @@
-<!-- .slide: data-background-image="http://sermons.seanho.com/img/bg/unsplash-NEgEJmN3JZo-boardwalk_grass.jpg" -->
+<!-- .slide: <%= bg("unsplash-NEgEJmN3JZo-boardwalk_grass.jpg") %> -->
 # CMPT231
 ## Data Structures and Algorithms
 ### Dr. Sean Ho
@@ -7,7 +7,7 @@
 Speaker notes go here.
 
 ---
-<!-- .slide: data-background-image="http://sermons.seanho.com/img/bg/unsplash-DtHTWqkgBZc-forest_house.jpg" -->
+<!-- .slide: <%= bg("unsplash-DtHTWqkgBZc-forest_house.jpg") %> -->
 ## Psalm 127:1-2 (NIV)
 Unless the Lord **builds** the house, <br/>
 the builders **labor** in vain. <br/>
@@ -47,7 +47,7 @@ for he **grants sleep** to those he loves.
   + but not until **later** in semester
 
 ---
-<!-- .slide: data-background-image="http://sermons.seanho.com/img/bg/unsplash-NEgEJmN3JZo-boardwalk_grass.jpg" -->
+<!-- .slide: <%= bg("unsplash-NEgEJmN3JZo-boardwalk_grass.jpg") %> -->
 ## Outline for today
 + **Algorithmic** analysis
   + **Insertion** sort
@@ -104,7 +104,7 @@ for he **grants sleep** to those he loves.
   + **How** do they do it?
 
 ---
-<!-- .slide: data-background-image="http://sermons.seanho.com/img/bg/unsplash-NEgEJmN3JZo-boardwalk_grass.jpg" -->
+<!-- .slide: <%= bg("unsplash-NEgEJmN3JZo-boardwalk_grass.jpg") %> -->
 ## Outline for today
 + Algorithmic analysis
   + **Insertion sort**
@@ -116,7 +116,7 @@ for he **grants sleep** to those he loves.
   + Proving asymptotic bounds
 
 ---
-<!-- .slide: data-background-image="http://sermons.seanho.com/img/bg/pixabay-726797-cards_monalisa.jpg" -->
+<!-- .slide: <%= bg("pixabay-726797-cards_monalisa.jpg") %> -->
 ## Insertion sort: hand of cards
 
 <div class="imgbox"><div>
@@ -218,7 +218,7 @@ Summation notation: \`sum_2^n t_j = t_2 + t_3 + ... + t_n\`
 + We'll define &Theta; more **precisely** later today
 
 ---
-<!-- .slide: data-background-image="http://sermons.seanho.com/img/bg/unsplash-NEgEJmN3JZo-boardwalk_grass.jpg" -->
+<!-- .slide: <%= bg("unsplash-NEgEJmN3JZo-boardwalk_grass.jpg") %> -->
 ## Outline for today
 + Algorithmic analysis
   + Insertion sort
@@ -261,7 +261,7 @@ Summation notation: \`sum_2^n t_j = t_2 + t_3 + ... + t_n\`
   + "*if not Tue, then not meatloaf*"
 
 ---
-<!-- .slide: data-background-image="http://sermons.seanho.com/img/bg/unsplash-NEgEJmN3JZo-boardwalk_grass.jpg" -->
+<!-- .slide: <%= bg("unsplash-NEgEJmN3JZo-boardwalk_grass.jpg") %> -->
 ## Outline for today
 + Algorithmic analysis
   + Insertion sort
@@ -312,7 +312,7 @@ Summation notation: \`sum_2^n t_j = t_2 + t_3 + ... + t_n\`
   + lg( lg( lg(16) ) ) = lg( lg(4) ) = lg(2) = 1
 
 ---
-<!-- .slide: data-background-image="http://sermons.seanho.com/img/bg/unsplash-NEgEJmN3JZo-boardwalk_grass.jpg" -->
+<!-- .slide: <%= bg("unsplash-NEgEJmN3JZo-boardwalk_grass.jpg") %> -->
 ## Outline for today
 + Algorithmic analysis
   + Insertion sort
@@ -324,7 +324,7 @@ Summation notation: \`sum_2^n t_j = t_2 + t_3 + ... + t_n\`
   + Proving asymptotic bounds
 
 ---
-<!-- .slide: data-background-image="http://sermons.seanho.com/img/bg/unsplash-_jN5_9zu8DM-sunflower.jpg" -->
+<!-- .slide: <%= bg("unsplash-_jN5_9zu8DM-sunflower.jpg") %> -->
 ## Fibonacci sequence
 + The n-th **Fibonacci number** is \`F\_n=F\_(n-1) + F\_(n-2)\`
   + Start with \`F_0=0, F_1=1:\`
@@ -346,7 +346,7 @@ Summation notation: \`sum_2^n t_j = t_2 + t_3 + ... + t_n\`
   + **Aspect ratio** in architecture, e.g., Parthenon
 
 ---
-<!-- .slide: data-background-image="http://sermons.seanho.com/img/bg/eso9845d-spiral_galaxy_NGC1232.jpg" -->
+<!-- .slide: <%= bg("eso9845d-spiral_galaxy_NGC1232.jpg") %> -->
 ## Fibonacci + golden ratio
 + Can **prove** *(#3.2-7)* that \`F\_n = (phi^n - (bar phi)^n)/sqrt 5\`
 + Second term is **fractional**: \` |(bar phi)^n|/sqrt 5 < 1/2\`
@@ -354,7 +354,7 @@ Summation notation: \`sum_2^n t_j = t_2 + t_3 + ... + t_n\`
 + i.e., Fibonacci grows **exponentially**!
 
 ---
-<!-- .slide: data-background-image="http://sermons.seanho.com/img/bg/unsplash-NEgEJmN3JZo-boardwalk_grass.jpg" -->
+<!-- .slide: <%= bg("unsplash-NEgEJmN3JZo-boardwalk_grass.jpg") %> -->
 ## Outline for today
 + Algorithmic analysis
   + Insertion sort
@@ -446,7 +446,7 @@ Summation notation: \`sum_2^n t_j = t_2 + t_3 + ... + t_n\`
 + Hence, \` log(n!) in Theta(n log(n)) \`
 
 ---
-<!-- .slide: data-background-image="http://sermons.seanho.com/img/bg/unsplash-NEgEJmN3JZo-boardwalk_grass.jpg" -->
+<!-- .slide: <%= bg("unsplash-NEgEJmN3JZo-boardwalk_grass.jpg") %> -->
 ## Outline for today
 + Algorithmic analysis
   + Insertion sort
@@ -478,7 +478,7 @@ Summation notation: \`sum_2^n t_j = t_2 + t_3 + ... + t_n\`
 + So by **monotonicity**, \`(log n)! in omega(n^3)\`
 
 ---
-<!-- .slide: data-background-image="http://sermons.seanho.com/img/bg/unsplash-NEgEJmN3JZo-boardwalk_grass.jpg" -->
+<!-- .slide: <%= bg("unsplash-NEgEJmN3JZo-boardwalk_grass.jpg") %> -->
 ## Outline for today
 + **Algorithmic** analysis
   + **Insertion** sort
@@ -490,7 +490,7 @@ Summation notation: \`sum_2^n t_j = t_2 + t_3 + ... + t_n\`
   + **Proving** asymptotic bounds
 
 ---
-<!-- .slide: data-background-image="http://sermons.seanho.com/img/bg/unsplash-NEgEJmN3JZo-boardwalk_grass.jpg" class="empty" -->
+<!-- .slide: <%= bg("unsplash-NEgEJmN3JZo-boardwalk_grass.jpg") %> class="empty" -->
 
 >>>
 2016-09-13: finished here with 10min to spare, so started lec2 merge sort
