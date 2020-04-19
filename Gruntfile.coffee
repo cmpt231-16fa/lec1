@@ -7,6 +7,7 @@ module.exports = (grunt) ->
         options:
           port: 9000
           hostname: 'localhost'
+          base: 'dist'
 
     sass:
       options:
@@ -15,18 +16,18 @@ module.exports = (grunt) ->
         outputStyle: 'compressed'
       theme:
         files:
-          'static/css/boldblack.css': 'scss/boldblack.scss'
+          'dist/css/boldblack.css': 'scss/boldblack.scss'
 
     exec:
-      print: 'decktape -s 1024x768 reveal "http://localhost:9000/" <%= pkg.pdf %> --no-sandbox; true'
-      thumbnail: 'decktape -s 800x600 --screenshots --screenshots-directory . --slides 1 reveal "http://localhost:9000/#/title" static/img/thumbnail.jpg --no-sandbox; true'
-      reducePDF: 'mv <%= pkg.pdf %> print.pdf; gs -q -dNOPAUSE -dBATCH -dSAFER -dPDFSETTINGS=/ebook -sDEVICE=pdfwrite -sOutputFile=<%= pkg.pdf %> print.pdf'
-      qr: 'echo https://<%= pkg.config.pretty_url %> | qrcode -o static/img/<%= pkg.shortname %>-qr.png'
+      print: 'decktape -s 1024x768 reveal "http://localhost:9000/" print.pdf --no-sandbox; true'
+      thumbnail: 'decktape -s 800x600 --screenshots --screenshots-directory . --slides 1 reveal "http://localhost:9000/#/title" dist/img/thumbnail.jpg --no-sandbox; true'
+      reducePDF: 'gs -q -dNOPAUSE -dBATCH -dSAFER -dPDFSETTINGS=/ebook -sDEVICE=pdfwrite -sOutputFile=dist/<%= pkg.shortname %>.pdf print.pdf'
+      qr: 'echo https://<%= pkg.config.pretty_url %> | qrcode -o dist/img/<%= pkg.shortname %>-qr.png'
 
     copy:
       index:
-        src: '_index.html'
-        dest: 'index.html'
+        src: 'index.html'
+        dest: 'dist/index.html'
         options:
           process: (content, path) ->
             return grunt.template.process content
@@ -34,27 +35,24 @@ module.exports = (grunt) ->
         expand: true
         flatten: true
         src: 'node_modules/reveal.js/plugin/notes/*'
-        dest: 'static/js/'
-      dist:
-        files: [{
-          expand: true
-          src: [
-            'static/**'
-            'index.html'
-          ]
-          dest: 'dist/'
-        },{
-          expand: true
-          flatten: true
-          src: 'static/img/favicon.*'
-          dest: 'dist/'
-        }]
+        dest: 'dist/js/'
+      static:
+        expand: true
+        src: [
+          'img/**',
+          'css/**'
+        ]
+        dest: 'dist/'
+      favicon:
+        expand: true
+        flatten: true
+        src: 'img/favicon.*'
+        dest: 'dist/'
 
   # Generated grunt vars
   grunt.config.merge
     pkg:
       shortname: grunt.config('pkg.name').replace(/.*\//, '')
-      pdf: 'static/<%= pkg.shortname %>.pdf'
       commit: (process.env.TRAVIS_COMMIT || "testing").substr(0,7)
     img: (id) ->
       'https://sermons.seanho.com/img/' + id
@@ -81,6 +79,7 @@ module.exports = (grunt) ->
     '*Compile* templates', [
       'copy:index'
       'copy:plugin'
+      'copy:static'
       'sass:theme'
     ]
 
@@ -91,11 +90,6 @@ module.exports = (grunt) ->
       'exec:reducePDF'
       'exec:thumbnail'
       'exec:qr'
-    ]
-
-  grunt.registerTask 'dist',
-    '*Copy* site to dist/ for deployment', [
-      'copy:dist'
       'cname'
       'nojekyll'
     ]
