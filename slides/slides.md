@@ -335,7 +335,7 @@ Summation notation: \`sum_2^n t_j = t_2 + t_3 + ... + t_n\`
   + [Vi Hart video: Doodling in Math ![YouTube](img/vi-fib.jpg)](https://www.youtube.com/watch?v=ahXIMUkSXX0)
 
 ---
-<!-- .slide: data-background-image="bg/nautilus-cutaway-shell.jpg" -->
+<!-- .slide: data-background-image="img/nautilus-cutaway-shell.jpg" -->
 ## The Golden ratio &phi;
 + &phi; is the **solution** to the equation \`x^2 = x+1\`
   + \` phi = (1 +- sqrt 5)/2 \`
