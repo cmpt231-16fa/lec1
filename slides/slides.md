@@ -172,13 +172,13 @@ in the inner "while" loop:
 
 ```
 insertion_sort(A, n):
-  for j = 2 to n:               # c0 * n
-    key = A[j]                  # c1 * (n-1)
-    i = j - 1                   # c2 * (n-1)
+  for j = 2 to n: # c0 * n
+    key = A[j] # c1 * (n-1)
+    i = j - 1 # c2 * (n-1)
     while i > 0 and A[i] > key: # c3 * sum (t_j)
-      A[i+1] = A[i]             # c4 * sum (t_j - 1)
-      i = i - 1                 # c5 * sum (t_j - 1)
-    A[i+1] = key                # c6 * (n-1)
+      A[i+1] = A[i] # c4 * sum (t_j - 1)
+      i = i - 1 # c5 * sum (t_j - 1)
+    A[i+1] = key # c6 * (n-1)
 ```
 
 Summation notation: \`sum_2^n t_j = t_2 + t_3 + ... + t_n\`
