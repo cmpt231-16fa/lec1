@@ -330,10 +330,10 @@ Summation notation: \`sum_2^n t_j = t_2 + t_3 + ... + t_n\`
   + (Lucas numbers start with \`F_0=2\`)
 + Shows up all over **nature**
   + Num of **spirals** on sunflowers, pinecones, etc.
-  + [Vi Hart video: Doodling in Math ![YouTube](static/img/vi-fib.jpg)](https://www.youtube.com/watch?v=ahXIMUkSXX0)
+  + [Vi Hart video: Doodling in Math ![YouTube](img/vi-fib.jpg)](https://www.youtube.com/watch?v=ahXIMUkSXX0)
 
 ---
-<!-- .slide: data-background-image="static/bg/nautilus-cutaway-shell.jpg" -->
+<!-- .slide: data-background-image="bg/nautilus-cutaway-shell.jpg" -->
 ## The Golden ratio &phi;
 + &phi; is the **solution** to the equation \`x^2 = x+1\`
   + \` phi = (1 +- sqrt 5)/2 \`
@@ -364,7 +364,7 @@ Summation notation: \`sum_2^n t_j = t_2 + t_3 + ... + t_n\`
   + Proving asymptotic bounds
 
 ---
-<!-- .slide: data-background-image="static/img/Fig-3-1-theta.png" -->
+<!-- .slide: data-background-image="img/Fig-3-1-theta.png" -->
 ## Asymptotic growth: &Theta;, O, &Omega;
 + Behaviour "**in the limit**" (big n)
 + Define &Theta; as **class** of functions: *f(n)* &isin; *&Theta;( g(n) )* iff
