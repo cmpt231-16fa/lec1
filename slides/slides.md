@@ -119,7 +119,8 @@ for he **grants sleep** to those he loves.
 <!-- .slide: data-background-image="http://sermons.seanho.com/img/bg/pixabay-726797-cards_monalisa.jpg" -->
 ## Insertion sort: hand of cards
 
-<div class="imgbox"><div data-markdown>
+<div class="imgbox"><div>
+
 ```
 insertion_sort(A, n):
   for j = 2 to n:
@@ -130,7 +131,8 @@ insertion_sort(A, n):
       i = i - 1
     A[i+1] = key
 ```
-</div><div data-markdown>
+
+</div><div>
 
 | In: |  *E*  | **B** |   D   |   F   |   A   |   C   |
 |-----|-------|-------|-------|-------|-------|-------|
