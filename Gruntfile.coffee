@@ -25,9 +25,17 @@ module.exports = (grunt) ->
       qr: 'echo https://<%= pkg.config.pretty_url %> | qrcode -o dist/img/<%= pkg.shortname %>-qr.png'
 
     copy:
-      index:
-        src: 'index.html'
-        dest: 'dist/index.html'
+      static:
+        expand: true
+        dot: true
+        cwd: 'static'
+        src: '**'
+        dest: 'dist/'
+      template:
+        expand: true
+        cwd: 'template'
+        src: '**'
+        dest: 'dist/'
         options:
           process: (content, path) ->
             return grunt.template.process content
@@ -36,20 +44,8 @@ module.exports = (grunt) ->
         flatten: true
         src: 'node_modules/reveal.js/plugin/notes/*'
         dest: 'dist/js/'
-      static:
-        expand: true
-        src: [
-          'img/**',
-          'css/**'
-        ]
-        dest: 'dist/'
-      favicon:
-        expand: true
-        flatten: true
-        src: 'img/favicon.*'
-        dest: 'dist/'
 
-  # Generated grunt vars
+  # Macros for convenience
   grunt.config.merge
     pkg:
       shortname: grunt.config('pkg.name').replace(/.*\//, '')
@@ -66,20 +62,11 @@ module.exports = (grunt) ->
   # Autoload tasks from grunt plugins
   require('load-grunt-tasks')(grunt)
 
-  grunt.registerTask 'cname',
-    'Create CNAME for Github Pages', ->
-      if grunt.config 'pkg.config.cname'
-        grunt.file.write 'dist/CNAME', grunt.config 'pkg.config.cname'
-
-  grunt.registerTask 'nojekyll',
-    'Disable Jekyll processing on Github Pages', ->
-      grunt.file.write 'dist/.nojekyll', ''
-
   grunt.registerTask 'install',
-    '*Compile* templates', [
-      'copy:index'
-      'copy:plugin'
+    '*Build* site', [
       'copy:static'
+      'copy:template'
+      'copy:plugin'
       'sass:theme'
     ]
 
@@ -90,8 +77,6 @@ module.exports = (grunt) ->
       'exec:reducePDF'
       'exec:thumbnail'
       'exec:qr'
-      'cname'
-      'nojekyll'
     ]
 
   # Define default task.

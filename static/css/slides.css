@@ -14,7 +14,7 @@ html { font-size: 40px }
 section[data-background-image],
 .reveal section[data-background-image] h1,
 .reveal section[data-background-image] h2 {
-  text-shadow: 0 0 0.2em black, 0 0 0.2em black, 0 0 0.2em black, 0 0 0.2em black;
+  text-shadow: 0 0 0.2rem black, 0 0 0.2rem black;
 }
 
 /* Override slide centering (interferes with print-pdf?) */
